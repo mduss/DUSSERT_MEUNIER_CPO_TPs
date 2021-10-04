@@ -11,3 +11,15 @@ package tp1;
 class sc {
     
 }
+public class TP1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+     
+        // TODO code application logic here
+        
+    }
+    
+}
