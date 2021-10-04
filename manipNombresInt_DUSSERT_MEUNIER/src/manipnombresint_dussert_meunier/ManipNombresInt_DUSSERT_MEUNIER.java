@@ -4,6 +4,8 @@
  */
 package manipnombresint_dussert_meunier;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Marine
@@ -15,13 +17,14 @@ public class ManipNombresInt_DUSSERT_MEUNIER {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Scanner sc=new Scanner(System.in);
         
-        
+        //Partie 1 :
         System.out.println("\nEntrer un premier entier :");
 
         int entier1 = sc.nextInt();
         
-        System.out.println("\nEntrer unsecond entier :");
+        System.out.println("\nEntrer un second entier :");
 
         int entier2 = sc.nextInt();
         
@@ -35,7 +38,10 @@ public class ManipNombresInt_DUSSERT_MEUNIER {
         System.out.println("Le produit est : " + prod );
         int quotient=entier1/entier2;
         int reste=entier1%entier2;
-        
+        System.out.println("Le quotient entier est " + quotient + " et le reste est "+reste );
+    
+        //Partie 2 :
+    
     }
     
 }
