@@ -69,7 +69,10 @@ public class GuessMyNumber_Dussert_Meunier {
             System.out.println("Tentez votre chance, saisissez un nombre entre 0 et 100 \nAttention vous n'avez que 20 tentatives !");
             int saisi = sc.nextInt(); 
             int compt = 1;
-            while ((saisi!=n)||(compt<=20)) {
+            while (saisi!=n) {
+                if (compt>20) {
+                    break;
+                }
                 System.out.println("Tentatve numéro : "+compt);
                 if (saisi<n) {
                     System.out.println("Trop petit,réesayer");
