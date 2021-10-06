@@ -69,10 +69,7 @@ public class GuessMyNumber_Dussert_Meunier {
             System.out.println("Tentez votre chance, saisissez un nombre entre 0 et 100 \nAttention vous n'avez que 20 tentatives !");
             int saisi = sc.nextInt(); 
             int compt = 1;
-            while (saisi!=n) {
-                if (compt>20) {
-                    break;
-                }
+            while ((saisi!=n)&&(compt<=20)) {
                 System.out.println("Tentatve numéro : "+compt);
                 if (saisi<n) {
                     System.out.println("Trop petit,réesayer");
@@ -87,7 +84,7 @@ public class GuessMyNumber_Dussert_Meunier {
                 System.out.println("Gagné à la tentative numéro " + compt);
             }
             else {
-                System.out.println("Perdu à cause d'u trop grand nombre de tentatives");
+                System.out.println("Perdu à cause d'un trop grand nombre de tentatives");
             }
         }
      // fin jeu
