@@ -46,6 +46,7 @@ public class GuessMyNumber_Dussert_Meunier {
                 }
                 compt+=1;
             }
+            System.out.println("Gagné à la tentative numéro " + compt);
         }
         
         else if (2==niv){
@@ -62,13 +63,31 @@ public class GuessMyNumber_Dussert_Meunier {
                 }
                 compt+=1;
             }
+            System.out.println("Gagné à la tentative numéro " + compt);
         }
         
-        
-        System.out.println("Gagné à la tentative numéro " + compt);
-        
+        else if (3==niv){
+            int n = generateurAleat.nextInt(100);
+            int saisi = sc.nextInt(); 
+            int compt = 0;
+            while ((saisi!=n)||(compt>=21)) {
+                saisi = sc.nextInt();
+                if (saisi<n) {
+                    System.out.println("Trop petit");
+                }
+                else if (saisi>n) {
+                    System.out.println("Trop grand");
+                }
+                compt+=1;
+            }
+            if (saisi==n){
+                System.out.println("Gagné à la tentative numéro " + compt);               
+            }
+            else {
+                System.out.println("Perdu à cause d'u trop grand nombre de tentatives"); 
+            }
         }
-     
+     // fin jeu
     }
 
         
