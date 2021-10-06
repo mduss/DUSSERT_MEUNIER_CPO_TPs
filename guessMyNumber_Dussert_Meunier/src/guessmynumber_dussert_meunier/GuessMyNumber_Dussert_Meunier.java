@@ -21,70 +21,70 @@ public class GuessMyNumber_Dussert_Meunier {
         Random generateurAleat = new Random();
         Scanner sc=new Scanner(System.in);
         
-        System.out.println("""
-                           1) Facile
-                           2) Normal
-                           3) Difficile
-                           4) Cauchemar
-                           
-                           Saisissez le numéro du niveau choisi :
-                           """);
+        System.out.println("1) Facile\n" + "2) Normal\n" + "3) Difficile\n" + "Saisissez le num\u00e9ro du niveau choisi :\n");
         int niv = sc.nextInt(); 
         
-        if (1==niv) {
+        if (1==niv){
             int n = generateurAleat.nextInt(50);
+            System.out.println(n);
+            System.out.println("Tentez votre chance, saisissez un nombre entre 0 et 50");
             int saisi = sc.nextInt(); 
-            int compt = 0;
+            int compt = 1;
             while (saisi!=n) {
-                saisi = sc.nextInt();
                 if (saisi<n) {
-                    System.out.println("Trop petit");
+                    System.out.println("Trop petit, réesayer");
                 }
                 else if (saisi>n) {
-                    System.out.println("Trop grand");
-
+                    System.out.println("Trop grand, réessayer");
                 }
                 compt+=1;
+                
+                saisi = sc.nextInt();
             }
             System.out.println("Gagné à la tentative numéro " + compt);
         }
         
         else if (2==niv){
-            int n = generateurAleat.nextInt(100);
+            int n = generateurAleat.nextInt(50);
+            System.out.println(n);
+            System.out.println("Tentez votre chance, saisissez un nombre entre 0 et 100");
             int saisi = sc.nextInt(); 
-            int compt = 0;
+            int compt = 1;
             while (saisi!=n) {
-                saisi = sc.nextInt();
                 if (saisi<n) {
-                    System.out.println("Trop petit");
+                    System.out.println("Trop petit, réesayer");
                 }
                 else if (saisi>n) {
-                    System.out.println("Trop grand");
+                    System.out.println("Trop grand, réessayer");
                 }
                 compt+=1;
+                saisi = sc.nextInt();
             }
             System.out.println("Gagné à la tentative numéro " + compt);
         }
         
         else if (3==niv){
             int n = generateurAleat.nextInt(100);
+            System.out.println(n);
+            System.out.println("Tentez votre chance, saisissez un nombre entre 0 et 100 \nAttention vous n'avez que 20 tentatives !");
             int saisi = sc.nextInt(); 
-            int compt = 0;
-            while ((saisi!=n)||(compt>=21)) {
-                saisi = sc.nextInt();
+            int compt = 1;
+            while ((saisi!=n)||(compt<=20)) {
+                System.out.println("Tentatve numéro : "+compt);
                 if (saisi<n) {
-                    System.out.println("Trop petit");
+                    System.out.println("Trop petit,réesayer");
                 }
                 else if (saisi>n) {
-                    System.out.println("Trop grand");
+                    System.out.println("Trop grand,réesayer");
                 }
                 compt+=1;
+                saisi = sc.nextInt();
             }
             if (saisi==n){
-                System.out.println("Gagné à la tentative numéro " + compt);               
+                System.out.println("Gagné à la tentative numéro " + compt);
             }
             else {
-                System.out.println("Perdu à cause d'u trop grand nombre de tentatives"); 
+                System.out.println("Perdu à cause d'u trop grand nombre de tentatives");
             }
         }
      // fin jeu
