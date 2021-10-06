@@ -41,6 +41,8 @@ public class ManipNombresInt_DUSSERT_MEUNIER {
         System.out.println("Le quotient entier est " + quotient + " et le reste est "+reste );
     
         //Partie 2 :
+        
+        
     
     }
     
