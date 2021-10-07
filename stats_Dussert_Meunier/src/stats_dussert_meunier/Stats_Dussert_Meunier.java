@@ -4,6 +4,10 @@
  */
 package stats_dussert_meunier;
 
+import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
+
 /**
  *
  * @author Marine
@@ -15,6 +19,24 @@ public class Stats_Dussert_Meunier {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Scanner sc = new Scanner(System.in); 
+        Random generateurAleat = new Random();
+        
+        double Tab[]= new double[6];
+        
+        System.out.println("Saisissez un nombre entier");
+        int m = sc. nextInt();
+        
+        for (int i=0 ; i<m ; i++) {
+            int n = generateurAleat.nextInt(6);
+            Tab[n]+=1;
+        }
+        System.out.println(Arrays.toString(Tab));
+
+        for (int i=0; i<Tab.length; i++) {
+            Tab[i]=(Tab[i]/m)*100;
+        }
+        System.out.println(Arrays.toString(Tab));
     }
     
 }
