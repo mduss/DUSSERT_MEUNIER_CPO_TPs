@@ -35,8 +35,8 @@ public class Stats_Dussert_Meunier {
 
         for (int i=0; i<Tab.length; i++) {
             Tab[i]=(Tab[i]/m)*100;
+            System.out.print(Tab[i] + " ");
         }
-        System.out.println(Arrays.toString(Tab));
     }
     
 }
