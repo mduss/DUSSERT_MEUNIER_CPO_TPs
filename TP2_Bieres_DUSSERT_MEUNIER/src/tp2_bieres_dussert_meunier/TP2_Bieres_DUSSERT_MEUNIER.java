@@ -15,18 +15,21 @@ public class TP2_Bieres_DUSSERT_MEUNIER {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        BouteilleBiere uneBiere = new BouteilleBiere("Cuvée des trolls",7.0 ,"Dubuisson") ;
-        uneBiere.lireEtiquette();
+        BouteilleBiere uneBiere = new BouteilleBiere("Cuvée des trolls",7.0 ,"Dubuisson");
         BouteilleBiere autreBiere = new BouteilleBiere("Leffe", 6.6,"Abbaye de Leffe") ;
-        autreBiere.lireEtiquette();
         BouteilleBiere cre1Biere = new BouteilleBiere("Pelforth", 5.8,"Brasserie du Pélican") ;
-        cre1Biere.lireEtiquette();
         BouteilleBiere cre2Biere = new BouteilleBiere("Heineken", 5.0,"Heineken") ;
-        cre2Biere.lireEtiquette();
         BouteilleBiere cre3Biere = new BouteilleBiere("Kronembourg", 4.2,"Carlsberg") ;
-        cre3Biere.lireEtiquette();
+ 
         
-        cre3Biere.Décapsuler();
+        uneBiere.Décapsuler();
+        cre2Biere.Décapsuler();
+        
+        System.out.println(uneBiere);
+        System.out.println(autreBiere);
+        System.out.println(cre1Biere);
+        System.out.println(cre2Biere);
+        System.out.println(cre3Biere);
         
     }
     
