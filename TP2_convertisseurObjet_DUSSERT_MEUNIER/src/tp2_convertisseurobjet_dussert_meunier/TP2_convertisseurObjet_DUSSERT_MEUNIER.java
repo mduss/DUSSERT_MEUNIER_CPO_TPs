@@ -15,6 +15,8 @@ public class TP2_convertisseurObjet_DUSSERT_MEUNIER {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Convertisseur objet1 = new Convertisseur();
+        Convertisseur objet2 = new Convertisseur();
     }
     
 }
