@@ -41,6 +41,6 @@ public class Convertisseur {
     }
     @Override
     public String toString() {
-        return "nb de conversions"+nbConversions;
+        return "nb de conversions : "+nbConversions;
     }
 }
