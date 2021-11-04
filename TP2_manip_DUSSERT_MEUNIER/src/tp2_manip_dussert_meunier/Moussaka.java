@@ -11,4 +11,7 @@ package tp2_manip_dussert_meunier;
  */
 public class Moussaka {
     public int nbCalories;
+    Moussaka(int a){
+        nbCalories=a;
+    }
 }
