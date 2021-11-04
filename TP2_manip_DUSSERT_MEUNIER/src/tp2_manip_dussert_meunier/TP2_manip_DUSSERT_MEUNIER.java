@@ -31,6 +31,19 @@ public class TP2_manip_DUSSERT_MEUNIER {
         assiette1.nbCalories) ;
         System.out.println("nb de calories de Assiette 2 : " +
         assiette2.nbCalories) ;
+        
+        // 6)la 1e me parrait juste
+        // non elle ne peut paas référencer un autre qui n'a aucun rapport
+        
+        //7)
+       
+       
+        Moussaka m1=new Moussaka(10);Moussaka m2=new Moussaka(20);
+        Moussaka m3=new Moussaka(30);Moussaka m4=new Moussaka(40);
+        Moussaka m5=new Moussaka(50);Moussaka m6=new Moussaka(60);
+        Moussaka m7=new Moussaka(70);Moussaka m8=new Moussaka(80);
+        Moussaka m9=new Moussaka(90);Moussaka m10=new Moussaka(100);
+        String [] Tab={"m1","m2","m3","m4","m5","m6","m7","m8","m9","m10"};
+        
     }
-    
 }
