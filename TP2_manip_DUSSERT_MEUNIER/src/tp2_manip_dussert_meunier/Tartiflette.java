@@ -10,6 +10,8 @@ package tp2_manip_dussert_meunier;
  * @author dusse
  */
 public class Tartiflette {
-    int nbCalories;
+    public int nbCalories;
+    Tartiflette(int a){
+        nbCalories=a;
+    }
 }
-
