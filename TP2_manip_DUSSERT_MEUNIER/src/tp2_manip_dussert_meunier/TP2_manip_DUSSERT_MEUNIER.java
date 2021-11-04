@@ -36,8 +36,6 @@ public class TP2_manip_DUSSERT_MEUNIER {
         // non elle ne peut paas référencer un autre qui n'a aucun rapport
         
         //7)
-       
-       
         Moussaka m1=new Moussaka(10);Moussaka m2=new Moussaka(20);
         Moussaka m3=new Moussaka(30);Moussaka m4=new Moussaka(40);
         Moussaka m5=new Moussaka(50);Moussaka m6=new Moussaka(60);
