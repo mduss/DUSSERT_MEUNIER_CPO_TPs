@@ -12,3 +12,4 @@ package tp2_manip_dussert_meunier;
 public class Tartiflette {
     int nbCalories;
 }
+
