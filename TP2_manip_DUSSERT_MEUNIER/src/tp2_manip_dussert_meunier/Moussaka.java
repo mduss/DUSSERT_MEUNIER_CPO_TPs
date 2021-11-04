@@ -10,5 +10,5 @@ package tp2_manip_dussert_meunier;
  * @author dusse
  */
 public class Moussaka {
-    
+    int nbCalories;
 }
