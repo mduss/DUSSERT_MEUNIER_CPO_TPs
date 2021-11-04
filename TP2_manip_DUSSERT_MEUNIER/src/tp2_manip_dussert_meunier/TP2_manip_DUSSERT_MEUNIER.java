@@ -42,6 +42,5 @@ public class TP2_manip_DUSSERT_MEUNIER {
         Moussaka m7=new Moussaka(70);Moussaka m8=new Moussaka(80);
         Moussaka m9=new Moussaka(90);Moussaka m10=new Moussaka(100);
         String [] Tab={"m1","m2","m3","m4","m5","m6","m7","m8","m9","m10"};
-        
     }
 }
