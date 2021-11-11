@@ -7,7 +7,7 @@ package tp2_relation_dussert_meunier;
 
 /**
  *
- * @author dusse
+ * @author dussert meunier
  */
 public class TP2_relation_DUSSERT_MEUNIER {
 
