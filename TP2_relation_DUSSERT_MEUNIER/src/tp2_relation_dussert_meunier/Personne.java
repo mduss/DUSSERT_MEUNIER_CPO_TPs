@@ -16,9 +16,5 @@ class Personne {
     Personne(String bobby, String sixkiller) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    Personne(String bobby, String sixkiller) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
 }

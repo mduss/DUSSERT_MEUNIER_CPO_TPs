@@ -15,7 +15,7 @@ public class TP2_relation_DUSSERT_MEUNIER {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // TODO code  application logic here
         Voiture uneClio = new Voiture ("Clio", "Renault", 5 ) ;
         Voiture uneAutreClio = new Voiture ("Clio", "Renault", 5 ) ;
         Voiture une2008 = new Voiture ("2008", "Peugeot", 6 ) ;
