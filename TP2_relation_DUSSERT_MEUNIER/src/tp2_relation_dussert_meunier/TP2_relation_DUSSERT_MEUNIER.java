@@ -12,7 +12,7 @@ package tp2_relation_dussert_meunier;
 public class TP2_relation_DUSSERT_MEUNIER {
 
     /**
-     * @param args the command line arguments
+     * @param args the commannd line arguments
      */
     public static void main(String[] args) {
         // TODO code  application logic here
