@@ -17,18 +17,18 @@ public class SP4_console_DUSSERT_MEUNIER {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("""
-                           Le jeu met en sc\u00e8ne deux joueurs qui s\u2019affrontent autours d\u2019une grille de jeu de 6 lignes par 7
+                           Le jeu met en scène deux joueurs qui s'affrontent autours d'une grille de jeu de 6 lignes par 7
                            colonnes pour un total de 42 cellules.
-                           Pr\u00e9paration de la partie : Lors de la pr\u00e9paration de la partie, un des joueurs se voit assigner
-                           une couleur al\u00e9atoire parmi Rouge ou Jaune. L\u2019autre joueur se voit assigner l\u2019autre couleur.
-                           Chaque joueur se voit remettre 21 jetons de la couleur qui lui a \u00e9t\u00e9 assign\u00e9e. On tire une couleur
-                           al\u00e9atoire parmi jaune et rouge ; le joueur associ\u00e9 \u00e0 cette couleur sera le premier joueur.
-                           D\u00e9roulement de la partie : A tour de r\u00f4le, chaque joueur choisit une colonne de la grille et y
-                           glisse un jeton de sa couleur, qui descend jusqu\u2019\u00e0 atteindre la ligne la plus basse non occup\u00e9e.
-                           Si l\u2019ajout de ce nouveau jeton ne produit pas un alignement de quatre jetons ou plus de la m\u00eame
+                           Préparation de la partie : Lors de la préparation de la partie, un des joueurs se voit assigner
+                           une couleur aléatoire parmi Rouge ou Jaune. L'autre joueur se voit assigner l'autre couleur.
+                           Chaque joueur se voit remettre 21 jetons de la couleur qui lui a été assignée. On tire une couleur
+                           aléatoire parmi jaune et rouge ; le joueur associé à cette couleur sera le premier joueur.
+                           Déroulement de la partie : A tour de rôle, chaque joueur choisit une colonne de la grille et y
+                           glisse un jeton de sa couleur, qui descend jusqu'à atteindre la ligne la plus basse non occupée.
+                           Si l'ajout de ce nouveau jeton ne produit pas un alignement de quatre jetons ou plus de la même
                            couleur, on passe au joueur suivant et ainsi de suite.
-                           Fin de partie : Le premier joueur qui arrive \u00e0 aligner au moins 4 jetons de sa couleur gagne la
-                           partie et remporte une victoire. Si aucun joueur n\u2019arrive \u00e0 aligner 4 jetons lorsque la grille de
+                           Fin de partie : Le premier joueur qui arrive à aligner au moins 4 jetons de sa couleur gagne la
+                           partie et remporte une victoire. Si aucun joueur n'arrive à aligner 4 jetons lorsque la grille de
                            jeu est remplie, la partie se termine sur un match nul.""");
         System.out.println("Présence de trous noirs\n" +
         "En début de partie, 5 trous noirs sont positionnés aléatoirement sur des cases de la grille de jeu\n" +
@@ -65,6 +65,7 @@ public class SP4_console_DUSSERT_MEUNIER {
         "lorsque le joueur positionne son jeton sur le trou noir, en même temps que le trou noir est détruit. ");
         
         
+     for (int i=0; )
     }
      
     
