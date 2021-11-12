@@ -10,8 +10,26 @@ package sp4_console_dussert_meunier;
  * @author dusse
  */
 public class Joueur {
-    Joueur Nom = new Joueur();
-    Joueur Couleur = new Joueur();
-    int réservoir ;
-    
+    String Nom;
+    String Couleur;
+    Jeton [] ListeJeton;
+    int nombreDésintégrateur ;
+    int nombreJetonsRestants;
+    public Joueur(String nom){
+        Nom=nom;
+    }
+    public void affecterCouleur(String couleur){
+        Couleur=couleur;
+    }
+    public ajouterJeton(Jeton) {
+        for(int i=0,i<ListeJeton.lenght){
+             
+        }
+    }
+    public void obtenirDesintegrateur() {
+        nombreDésintégrateur+=1;
+    }
+    public void utiliserDesintegrateur(){
+        nombreDésintégrateur-=1;
+    }
 }

@@ -11,10 +11,6 @@ package sp4_console_dussert_meunier;
  */
 public class Grille {
     int[][] cellules=new int[6][7];
-    for (int i=0;i<6;i++){
-        for (int j=0;j<7;j++){
-            cellules[i][j]=int(String(i)+String(j));
-        }
 }
     
     int [] C1= new  int[6];
