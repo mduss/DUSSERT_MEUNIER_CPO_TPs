@@ -65,7 +65,7 @@ public class SP4_console_DUSSERT_MEUNIER {
         "lorsque le joueur positionne son jeton sur le trou noir, en même temps que le trou noir est détruit. ");
         
         
-     for (int i=0; )
+     
     }
      
     
