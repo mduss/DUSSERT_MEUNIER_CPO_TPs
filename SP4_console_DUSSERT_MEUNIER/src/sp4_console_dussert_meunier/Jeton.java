@@ -11,7 +11,7 @@ package sp4_console_dussert_meunier;
  */
 public class Jeton {
     String Couleur;
-    public void Jeton(String jet){
+    public Jeton(String jet){
         jet=Couleur;
     }
     public String lireCouleur(){

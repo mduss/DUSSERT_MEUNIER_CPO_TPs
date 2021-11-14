@@ -12,7 +12,7 @@ package sp4_console_dussert_meunier;
 public class Joueur {
     String Nom;
     String Couleur;
-    Jeton [] ListeJeton;
+    Jeton [] ListeJetons;
     int nombreDésintégrateur ;
     int nombreJetonsRestants;
     public Joueur(String nom){
@@ -21,10 +21,9 @@ public class Joueur {
     public void affecterCouleur(String couleur){
         Couleur=couleur;
     }
-    public ajouterJeton(Jeton) {
-        for(int i=0,i<ListeJeton.lenght){
-             
-        }
+    public void ajouterJeton(Jeton()) {
+        ListeJetons[21-nombreJetonsRestants]=Jeton.Jeton();
+        
     }
     public void obtenirDesintegrateur() {
         nombreDésintégrateur+=1;

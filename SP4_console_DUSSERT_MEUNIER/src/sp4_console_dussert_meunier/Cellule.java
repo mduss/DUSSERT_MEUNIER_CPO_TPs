@@ -22,10 +22,16 @@ public class Cellule {
             }
         }
     }
-    public boolean affecterJeton(Jeton){
-        
+    public boolean affecterJeton(Jeton,int l,int c){
+        if (cellules[l][c]==0){
+            return false;
+        }
+        else {
+            celllules[l][c]=jeton;
+            return true;
+        }
     }
-    public recupererJeton(){
+    public void recupererJeton(){
         return ;
     }
     supprimerJeton
