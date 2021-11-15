@@ -32,8 +32,55 @@ public class Grille {
     }
     
     public boolean etreRemplie(){
-        return 
+        for (int i=0;i<6;i++){
+            for (int j=0;j<7;j++){
+                if (cellulesJeu[i][j].jetonCourant==null){
+                    return false;
+                }
+            }
+        } 
+        return false;
+    }
+    public void viderGrille() {
+        for (int i=0;i<6;i++){
+            for (int j=0;j<7;j++){
+                cellulesJeu[i][j].jetonCourant=null;
+                cellulesJeu[i][j].désintégrateur=false;
+                cellulesJeu[i][j].trouNoir=false;                
+            }
+        } 
+    }
+    public void afficherGrilleSurConsole() {
+        for (int i=0;i<6;i++){
+            System.out.println();
+            for (int j=0;j<7;j++){
+                if (cellulesJeu[i][j].lireCouleurDuJeton()=="rouge") {
+                    System.out.print("\u001B[31m 0");
+                }
+                if (cellulesJeu[i][j].lireCouleurDuJeton()=="jaune") {
+                   System.out.print("\u001B[33m 0");
+                }
+                else {
+                    System.out.print("-");
+                }
+            }
+        }
     }
     
+    public boolean celluleOccupee(int l,int c) {
+        if (cellulesJeu[l][c].jetonCourant!=null){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
     
+    public String lireCouleurDuJeton(int l,int c) {
+        return cellulesJeu[l][c].lireCouleurDuJeton();
+    }
+    
+    public boolean etreGagnantePourJoueur(Joueur J) {
+        
+    }
 }
