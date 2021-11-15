@@ -20,18 +20,26 @@ public class Cellule {
         désintégrateur=false;
     }
     
-    public boolean affecterJeton(Jeton jetonCourant){
+    public boolean affecterJeton(Jeton j){
         if (jetonCourant==null){
-            jetonCourant=true;
+            jetonCourant=j;
             return true;
         }
         else {
             return false;
         }
     }
-    public void recupererJeton(){
-        return ;
+    public Jeton recupererJeton(){
+        return jetonCourant;
     }
-    supprimerJeton
+    public boolean supprimerJeton(){
+        if (jetonCourant==null){
+            return false;
+        }
+        else {
+            jetonCourant=null;
+            return true; 
+        }
+    }
 
 }
