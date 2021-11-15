@@ -10,16 +10,30 @@ package sp4_console_dussert_meunier;
  * @author dusse
  */
 public class Grille {
-    int[][] cellules=new int[6][7];
-    cellulesJeu[i][j]=new cellule
-}
+    Cellule cellulesJeu[][]=new Cellule[6][7];
+    public Grille(){
+        for (int i=0;i<6;i++){
+            for (int j=0;j<7;j++){
+                cellulesJeu[i][j]= new Cellule();
+            }
+        }
+    }
+    public boolean ajouterJetonDansColonne(Jeton j,int c) {
+        for (int l=0;l<6;l++){
+            if (cellulesJeu[l][c].jetonCourant==null){
+               cellulesJeu[l][c].jetonCourant= j;
+               return true;
+            }
+            else {
+               return false;
+            }
+        }  
+        return true;
+    }
     
-    int [] C1= new  int[6];
-    int [] C2= new  int[6];
-    int [] C3= new  int[6];
-    int [] C4= new  int[6];
-    int [] C5= new  int[6];
-    int [] C6= new  int[6];
-    int [] C7= new  int[6];
+    public boolean etreRemplie(){
+        return 
+    }
+    
     
 }
