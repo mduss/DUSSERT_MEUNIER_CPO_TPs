@@ -11,6 +11,7 @@ package sp4_console_dussert_meunier;
  */
 public class Grille {
     int[][] cellules=new int[6][7];
+    cellulesJeu[i][j]=new cellule
 }
     
     int [] C1= new  int[6];

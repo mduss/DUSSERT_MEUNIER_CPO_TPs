@@ -15,20 +15,18 @@ public class Cellule {
     boolean désintégrateur;
     
     public Cellule(){
-        Cellule[][] cellules=new Cellule[6][7];
-        for (int i=0;i<6;i++){
-            for (int j=0;j<7;j++){
-                cellules[i][j]=int(String(i)+String(j));
-            }
-        }
+        jetonCourant=null;
+        trouNoir=false;
+        désintégrateur=false;
     }
-    public boolean affecterJeton(Jeton,int l,int c){
-        if (cellules[l][c]==0){
-            return false;
+    
+    public boolean affecterJeton(Jeton jetonCourant){
+        if (jetonCourant==null){
+            jetonCourant=true;
+            return true;
         }
         else {
-            celllules[l][c]=jeton;
-            return true;
+            return false;
         }
     }
     public void recupererJeton(){
