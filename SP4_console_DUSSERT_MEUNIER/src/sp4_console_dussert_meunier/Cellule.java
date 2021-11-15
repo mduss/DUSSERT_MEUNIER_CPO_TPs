@@ -41,5 +41,69 @@ public class Cellule {
             return true; 
         }
     }
-
+    
+    public boolean placerTrouNoir(){
+        if (trouNoir==false){
+            trouNoir=true;
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    public boolean placerDésintégrateur(){
+        if (désintégrateur==false){
+            désintégrateur=true;
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    public boolean présenceTrouNoir(){
+        if (trouNoir==true){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    public boolean présenceDésintégrateur(){
+        if (désintégrateur==true){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    public String lireCouleurDuJeton(){
+        if (jetonCourant!=null){
+            return Jeton();/////////////////////////////////////////////////
+        }
+        else{
+            return "vide";
+        }
+    }
+    
+    public boolean recupererDesintegrateur () {
+        if (présenceDésintégrateur()){
+            désintégrateur=false;
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    
+    public boolean activerTrouNoir(){
+        if (présenceTrouNoir()){
+           //vérifier présence de  jetonCourant ?
+           jetonCourant=null;
+           return true;
+        }
+        else {
+            return false;
+        }
+    }
+    
 }
