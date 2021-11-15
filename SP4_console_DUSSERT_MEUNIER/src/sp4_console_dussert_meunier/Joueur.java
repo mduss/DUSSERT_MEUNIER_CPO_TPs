@@ -21,8 +21,8 @@ public class Joueur {
     public void affecterCouleur(String couleur){
         Couleur=couleur;
     }
-    public Jeton ajouterJeton(String JetonJoueur) {
-        ListeJetons[21-nombreJetonsRestants]=JetonJoueur;     
+    public void ajouterJeton(Jeton j) {
+        ListeJetons[21-nombreJetonsRestants]=j;     
     }
     public void obtenirDesintegrateur() {
         nombreDésintégrateur+=1;
