@@ -78,7 +78,7 @@ public class Cellule {
     }
     public String lireCouleurDuJeton(){
         if (jetonCourant!=null){
-            return Jeton();/////////////////////////////////////////////////
+            return jetonCourant.lireCouleur();
         }
         else{
             return "vide";
