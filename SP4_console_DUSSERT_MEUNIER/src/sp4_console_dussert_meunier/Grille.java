@@ -94,7 +94,7 @@ public class Grille {
         // gagnant sur une même colonne
         for (int i=0;i<2;i++){
             for (int j=0;j<3;j++){
-               if ( (lireCouleurDuJeton(i,j)==lireCouleurDuJeton(i+1,j)) && ((lireCouleurDuJeton(i+1,j)==lireCouleurDuJeton(i+2,j)) && (lireCouleurDuJeton(i+2,j)==lireCouleurDuJeton(i+3,j)) ){
+               if ( (lireCouleurDuJeton(i,j)==lireCouleurDuJeton(i+1,j)) && ((lireCouleurDuJeton(i+1,j)==lireCouleurDuJeton(i+2,j)) && (lireCouleurDuJeton(i+2,j)==lireCouleurDuJeton(i+3,j)) )){
                    return true;
                } 
             }
@@ -120,7 +120,18 @@ public class Grille {
         return false;
     }
     
-    public void tasserGrille(int j){
-        
+    public void tasserGrille(int c){
+        for (int i=0;i<6;i++){
+            if (cellulesJeu[i][c].jetonCourant==null){
+                for (int j=i;j<5,j++){
+                    cellulesJeu[j][c].jetonCourant=cellulesJeu[j+1][c].jetonCourant;
+                    cellulesJeu[j][c].désintégrateur=cellulesJeu[j+1][c].désintégrateur;
+                    cellulesJeu[j][c].trouNoir=cellulesJeu[j+1][c].trouNoir;
+                }
+                cellulesJeu[6][c].jetonCourant=null;
+                cellulesJeu[6][c].désintégrateur=false;
+                cellulesJeu[6][c].trouNoir=false;                
+            }
+        }
     }
 }
