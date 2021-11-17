@@ -5,6 +5,8 @@
  */
 package sp4_console_dussert_meunier;
 
+import java.util.Scanner;
+
 /**
  *
  * @author dusse
@@ -37,7 +39,18 @@ public class Partie {
     }
     
     public void debuterPartie(){
-        grilleJeu.afficherGrilleSurConsole();
+        Scanner sc=new Scanner(System.in);
         
+        grilleJeu.afficherGrilleSurConsole();
+        joueurCourant=ListeJoueurs[0];
+        while(grilleJeu.etreGagnantePourJoueur(joueurCourant)|| grilleJeu.etreRemplie()){
+            int numco=-1;
+            while(numco>7&&numco<=0&&){
+                numco=sc.nextInt();
+                if (numco<7) {
+                
+                }
+            }
+        }
     }
 }

@@ -39,7 +39,7 @@ public class Grille {
                 }
             }
         } 
-        return false;
+        return true;
     }
     public void viderGrille() {
         for (int i=0;i<6;i++){
@@ -134,4 +134,6 @@ public class Grille {
             }
         }
     }
+    
+    public 
 }
