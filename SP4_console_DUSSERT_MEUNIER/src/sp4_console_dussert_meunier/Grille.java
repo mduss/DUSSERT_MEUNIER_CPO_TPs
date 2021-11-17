@@ -57,7 +57,7 @@ public class Grille {
                 if (cellulesJeu[i][j].lireCouleurDuJeton()=="rouge") {
                     System.out.print("\u001B[31m 0");
                 }
-                if (cellulesJeu[i][j].lireCouleurDuJeton()=="jaune") {
+                else if (cellulesJeu[i][j].lireCouleurDuJeton()=="jaune") {
                    System.out.print("\u001B[33m 0");
                 }
                 else {

@@ -52,7 +52,9 @@ public class Partie {
                 numco=sc.nextInt();
             }
             numco-=1;
-            grilleJeu.ajouterJetonDansColonne(joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1],numco);
+            Jeton j=joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1];
+            boolean b =grilleJeu.ajouterJetonDansColonne(j,numco);
+            System.out.println(b);
             if (joueurCourant==ListeJoueurs[0]){
                 joueurCourant=ListeJoueurs[1];
             }
