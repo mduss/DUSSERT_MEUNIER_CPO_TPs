@@ -135,5 +135,12 @@ public class Grille {
         }
     }
     
-    public 
+    public boolean colonneremplie(int c){
+        for (int j=0;j<7;j++){
+            if (cellulesJeu[j][c].jetonCourant==null){
+                return false;
+            }
+        }
+        return true;
+    }
 }

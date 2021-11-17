@@ -45,10 +45,12 @@ public class Partie {
         joueurCourant=ListeJoueurs[0];
         while(grilleJeu.etreGagnantePourJoueur(joueurCourant)|| grilleJeu.etreRemplie()){
             int numco=-1;
-            while(numco>7&&numco<=0&&){
+            while(numco>7&&numco<=0&&grilleJeu.colonneremplie(numco)==false){
                 numco=sc.nextInt();
-                if (numco<7) {
-                
+            }
+            for (int i=0; i<6;i++){
+                if (grilleJeu.celluleOccupee(i,numco)==false){
+                    
                 }
             }
         }
