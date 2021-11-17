@@ -44,12 +44,14 @@ public class Partie {
         joueurCourant=ListeJoueurs[0];
         while(grilleJeu.etreGagnantePourJoueur(joueurCourant)|| grilleJeu.etreRemplie()){
             grilleJeu.afficherGrilleSurConsole();
-            int numco=-1;
-            while(numco>7&&numco<=0&&grilleJeu.colonneremplie(numco)==false){
+            int numco;
+            System.out.println(joueurCourant+" choisissez un numéro de colonne : ");
+            numco=sc.nextInt();
+            while((numco>7||numco<0)||grilleJeu.colonneremplie(numco)){
                 System.out.println("Choisissez un numéro de colonne : ");
                 numco=sc.nextInt();
-                numco-=1;
             }
+            numco-=1;
             grilleJeu.ajouterJetonDansColonne(joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1],numco);
             if (joueurCourant==ListeJoueurs[0]){
                 joueurCourant=ListeJoueurs[1];

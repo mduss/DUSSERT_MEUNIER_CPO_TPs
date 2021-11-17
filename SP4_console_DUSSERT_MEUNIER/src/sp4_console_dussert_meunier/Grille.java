@@ -61,10 +61,11 @@ public class Grille {
                    System.out.print("\u001B[33m 0");
                 }
                 else {
-                    System.out.print("-");
+                    System.out.print("  -  ");
                 }
             }
         }
+        System.out.println();
     }
     
     public boolean celluleOccupee(int l,int c) {
