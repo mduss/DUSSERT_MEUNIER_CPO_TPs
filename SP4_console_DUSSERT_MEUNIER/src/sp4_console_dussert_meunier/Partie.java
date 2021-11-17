@@ -17,7 +17,8 @@ public class Partie {
     Grille grilleJeu;
     
     public Partie(Joueur J1,Joueur J2){
-        
+      ListeJoueurs[0]=J1;
+      ListeJoueurs[1]=J2;
     }
     
     public void attribuerCouleurAuxJoueurs(){
@@ -45,13 +46,11 @@ public class Partie {
             grilleJeu.afficherGrilleSurConsole();
             int numco=-1;
             while(numco>7&&numco<=0&&grilleJeu.colonneremplie(numco)==false){
+                System.out.println("Choisissez un numéro de colonne : ");
                 numco=sc.nextInt();
+                numco-=1;
             }
-            for (int i=0; i<6;i++){
-                if (grilleJeu.celluleOccupee(i,numco)==false){
-                    grilleJeu.ajouterJetonDansColonne(joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1],numco);
-                }
-            }
+            grilleJeu.ajouterJetonDansColonne(joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1],numco);
             if (joueurCourant==ListeJoueurs[0]){
                 joueurCourant=ListeJoueurs[1];
             }

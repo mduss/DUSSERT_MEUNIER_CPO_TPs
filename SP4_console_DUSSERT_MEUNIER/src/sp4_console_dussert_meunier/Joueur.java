@@ -22,7 +22,8 @@ public class Joueur {
         Couleur=couleur;
     }
     public void ajouterJeton(Jeton j) {
-        ListeJetons[21-nombreJetonsRestants]=j;     
+        ListeJetons[nombreJetonsRestants]=j;
+        nombreJetonsRestants++;
     }
     public void obtenirDesintegrateur() {
         nombreDésintégrateur+=1;

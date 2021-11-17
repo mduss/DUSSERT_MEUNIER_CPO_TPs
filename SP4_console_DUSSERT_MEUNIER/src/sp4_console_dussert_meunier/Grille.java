@@ -21,7 +21,7 @@ public class Grille {
     public boolean ajouterJetonDansColonne(Jeton j,int c) {
         for (int l=0;l<6;l++){
             if (cellulesJeu[l][c].jetonCourant==null){
-               cellulesJeu[l][c].jetonCourant= j;
+               cellulesJeu[l][c].affecterJeton(j);
                return true;
             }
             else {
@@ -69,10 +69,10 @@ public class Grille {
     
     public boolean celluleOccupee(int l,int c) {
         if (cellulesJeu[l][c].jetonCourant!=null){
-            return true;
+            return false;
         }
         else {
-            return false;
+            return true;
         }
     }
     
