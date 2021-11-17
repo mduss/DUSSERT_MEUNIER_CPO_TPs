@@ -19,17 +19,25 @@ public class Partie {
     }
     
     public void attribuerCouleurAuxJoueurs(){
-        ListeJoueurs[1].Couleur="rouge";
-        ListeJoueurs[2].Couleur="jaune";
+        ListeJoueurs[0].Couleur="rouge";
+        ListeJoueurs[1].Couleur="jaune";
     }
     
     public void initialiserPartie(){
-        grilleJeu.afficherGrilleSurConsole();
+        grilleJeu =new Grille();
+        
+        ListeJoueurs[0].ListeJetons=new Jeton[21]; 
+        for (int i=0; i<21; i++){
+            ListeJoueurs[0].ajouterJeton(new Jeton("rouge"));
+        }
         ListeJoueurs[1].ListeJetons=new Jeton[21];
-        ListeJoueurs[2].ListeJetons=new Jeton[21];
+        for (int i=0; i<21; i++){
+            ListeJoueurs[1].ajouterJeton(new Jeton("jaune"));
+        }
     }
     
     public void debuterPartie(){
+        grilleJeu.afficherGrilleSurConsole();
         
     }
 }
