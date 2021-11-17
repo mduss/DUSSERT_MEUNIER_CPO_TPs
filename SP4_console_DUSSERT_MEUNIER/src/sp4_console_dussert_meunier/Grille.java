@@ -123,7 +123,7 @@ public class Grille {
     public void tasserGrille(int c){
         for (int i=0;i<6;i++){
             if (cellulesJeu[i][c].jetonCourant==null){
-                for (int j=i;j<5,j++){
+                for (int j=i;j<5;j++){
                     cellulesJeu[j][c].jetonCourant=cellulesJeu[j+1][c].jetonCourant;
                     cellulesJeu[j][c].désintégrateur=cellulesJeu[j+1][c].désintégrateur;
                     cellulesJeu[j][c].trouNoir=cellulesJeu[j+1][c].trouNoir;
