@@ -51,6 +51,7 @@ public class Grille {
         } 
     }
     public void afficherGrilleSurConsole() {
+        //changer sens d'affichage du tableau
         for (int i=0;i<6;i++){
             System.out.println();
             for (int j=0;j<7;j++){
@@ -61,7 +62,7 @@ public class Grille {
                    System.out.print("\u001B[33m 0");
                 }
                 else {
-                    System.out.print("  -  ");
+                    System.out.print("  -  "); //ajouter couleur noir
                 }
             }
         }
