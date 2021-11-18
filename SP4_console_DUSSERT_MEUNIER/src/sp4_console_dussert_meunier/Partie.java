@@ -44,23 +44,24 @@ public class Partie {
         joueurCourant=ListeJoueurs[0];
         while(grilleJeu.etreGagnantePourJoueur(joueurCourant)|| grilleJeu.etreRemplie()){
             grilleJeu.afficherGrilleSurConsole();
-            int numco;
-            System.out.println(joueurCourant+" choisissez un numéro de colonne : ");
-            numco=sc.nextInt();
-            while((numco>7||numco<0)||grilleJeu.colonneremplie(numco)){
-                System.out.println("Choisissez un numéro de colonne : ");
-                numco=sc.nextInt();
-            }
-            numco-=1;
-            Jeton j=joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1];
-            boolean b =grilleJeu.ajouterJetonDansColonne(j,numco);
-            System.out.println(b);
             if (joueurCourant==ListeJoueurs[0]){
                 joueurCourant=ListeJoueurs[1];
             }
             else{
                 joueurCourant=ListeJoueurs[0];
             }
+            int numco;
+            System.out.println(joueurCourant.Nom+" choisissez un numéro de colonne : ");
+            numco=sc.nextInt();
+            while((numco>7||numco<0)||grilleJeu.colonneremplie(numco)){
+                System.out.println(joueurCourant.Nom+" choisissez un numéro de colonne : ");
+                numco=sc.nextInt();
+            }
+            numco-=1;
+            Jeton j=joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1];
+            boolean b = grilleJeu.ajouterJetonDansColonne(j,numco);
+            System.out.println(b);
         }
+        System.out.print(joueurCourant.Nom+" a gagné !");
     }
 }

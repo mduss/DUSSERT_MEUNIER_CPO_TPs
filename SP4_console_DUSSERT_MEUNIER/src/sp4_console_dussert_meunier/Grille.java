@@ -24,11 +24,8 @@ public class Grille {
                cellulesJeu[l][c].affecterJeton(j);
                return true;
             }
-            else {
-               return false;
-            }
         }  
-        return true;
+        return false;
     }
     
     public boolean etreRemplie(){
@@ -52,14 +49,14 @@ public class Grille {
     }
     public void afficherGrilleSurConsole() {
         //changer sens d'affichage du tableau
-        for (int i=0;i<6;i++){
+        for (int i=5;i>=0;i--){
             System.out.println();
             for (int j=0;j<7;j++){
                 if (cellulesJeu[i][j].lireCouleurDuJeton()=="rouge") {
-                    System.out.print("\u001B[31m 0");
+                    System.out.print("\u001B[31m  0  ");
                 }
                 else if (cellulesJeu[i][j].lireCouleurDuJeton()=="jaune") {
-                   System.out.print("\u001B[33m 0");
+                   System.out.print("\u001B[33m  0  ");
                 }
                 else {
                     System.out.print("  -  "); //ajouter couleur noir
@@ -123,7 +120,7 @@ public class Grille {
     }
     
     public void tasserGrille(int c){
-        for (int i=0;i<6;i++){
+        for (int i=5;i>=0;i--){
             if (cellulesJeu[i][c].jetonCourant==null){
                 for (int j=i;j<5;j++){
                     cellulesJeu[j][c].jetonCourant=cellulesJeu[j+1][c].jetonCourant;
@@ -138,7 +135,7 @@ public class Grille {
     }
     
     public boolean colonneremplie(int c){
-        for (int j=0;j<7;j++){
+        for (int j=0;j<6;j++){
             if (cellulesJeu[j][c].jetonCourant==null){
                 return false;
             }
