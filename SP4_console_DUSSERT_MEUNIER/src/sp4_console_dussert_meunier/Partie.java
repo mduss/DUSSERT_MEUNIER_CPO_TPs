@@ -42,7 +42,11 @@ public class Partie {
     public void debuterPartie(){
         Scanner sc=new Scanner(System.in);
         joueurCourant=ListeJoueurs[0];
-        while(grilleJeu.etreGagnantePourJoueur(joueurCourant)==false||grilleJeu.etreRemplie()==false){
+        System.out.println(grilleJeu.etreGagnantePourJoueur(joueurCourant));
+        System.out.println(grilleJeu.etreRemplie());
+        while(grilleJeu.etreGagnantePourJoueur(joueurCourant)==false && grilleJeu.etreRemplie()==false){
+            System.out.println(grilleJeu.etreGagnantePourJoueur(joueurCourant));
+            System.out.println(grilleJeu.etreRemplie());
             grilleJeu.afficherGrilleSurConsole();
             if (joueurCourant==ListeJoueurs[0]){
                 joueurCourant=ListeJoueurs[1];
@@ -59,8 +63,7 @@ public class Partie {
             }
             numco-=1;
             Jeton j=joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1];
-            boolean b = grilleJeu.ajouterJetonDansColonne(j,numco);
-            System.out.println(b);
+            grilleJeu.ajouterJetonDansColonne(j,numco);
         }
         System.out.print(joueurCourant.Nom+" a gagné !");
     }
