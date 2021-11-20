@@ -82,7 +82,7 @@ public class Grille {
     public boolean etreGagnantePourJoueur(Joueur J) {
         
         //gagnant sur une même ligne
-        for (int i=0;i<7;i++){
+        for (int i=0;i<6;i++){
             for (int j=0;j<4;j++){
                if ((lireCouleurDuJeton(i,j)==lireCouleurDuJeton(i,j+1)) && ((lireCouleurDuJeton(i,j+1)==lireCouleurDuJeton(i,j+2)) && (lireCouleurDuJeton(i,j+2)==lireCouleurDuJeton(i,j+3)) )){
                    return true;
@@ -111,7 +111,7 @@ public class Grille {
         //gagnant en diagonale négative
         for (int i=3;i<6;i++){
             for (int j=0;j<4;j++){
-               if ( (lireCouleurDuJeton(i,j)==lireCouleurDuJeton(i+1,j+1)) && ((lireCouleurDuJeton(i+1,j+1)==lireCouleurDuJeton(i+2,j+2)) && (lireCouleurDuJeton(i+2,j+2)==lireCouleurDuJeton(i+3,j+3))) ){
+               if ( (lireCouleurDuJeton(i,j)==lireCouleurDuJeton(i-1,j+1)) && ((lireCouleurDuJeton(i-1,j+1)==lireCouleurDuJeton(i-2,j+2)) && (lireCouleurDuJeton(i-2,j+2)==lireCouleurDuJeton(i-3,j+3))) ){
                    return true;
                } 
             }

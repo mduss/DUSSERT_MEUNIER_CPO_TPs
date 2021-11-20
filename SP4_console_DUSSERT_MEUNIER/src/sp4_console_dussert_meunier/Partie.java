@@ -42,7 +42,7 @@ public class Partie {
     public void debuterPartie(){
         Scanner sc=new Scanner(System.in);
         joueurCourant=ListeJoueurs[0];
-        while(grilleJeu.etreGagnantePourJoueur(joueurCourant)|| grilleJeu.etreRemplie()){
+        while(grilleJeu.etreGagnantePourJoueur(joueurCourant)==false||grilleJeu.etreRemplie()==false){
             grilleJeu.afficherGrilleSurConsole();
             if (joueurCourant==ListeJoueurs[0]){
                 joueurCourant=ListeJoueurs[1];
@@ -53,7 +53,7 @@ public class Partie {
             int numco;
             System.out.println(joueurCourant.Nom+" choisissez un numéro de colonne : ");
             numco=sc.nextInt();
-            while((numco>7||numco<0)||grilleJeu.colonneremplie(numco)){
+            while((numco>8||numco<0)||grilleJeu.colonneremplie(numco-1)){
                 System.out.println(joueurCourant.Nom+" choisissez un numéro de colonne : ");
                 numco=sc.nextInt();
             }
