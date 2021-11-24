@@ -150,4 +150,33 @@ public class Grille {
         }
         return true;
     }
+    public boolean placerTrouNoir(int l,int c){
+        if (cellulesJeu[l][c].trouNoir==false){
+            cellulesJeu[l][c].trouNoir=true;
+            return true;
+        }
+        return false;
+    }
+    
+    public boolean placerDésintégrateur(int l,int c){
+        if (cellulesJeu[l][c].désintégrateur==false){
+            cellulesJeu[l][c].désintégrateur=true;
+            return true;
+        }
+        return false;
+    }
+    
+    public boolean supprimerJeton(int l,int c){
+        if (celluleOccupee(l,c)){
+            cellulesJeu[l][c].jetonCourant=null;
+            return true;
+        }
+        return false;
+    }
+    
+    public String recupererJeton(int l,int c){
+        String jeton=cellulesJeu[l][c].lireCouleurDuJeton();
+        cellulesJeu[l][c].jetonCourant=null;
+        return jeton;
+    } 
 }
