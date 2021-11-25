@@ -6,6 +6,7 @@
 package sp4_console_dussert_meunier;
 
 import java.util.Scanner;
+import java.util.Random;
 
 /**
  *
@@ -41,9 +42,15 @@ public class Partie {
     
     public void debuterPartie(){
         Scanner sc=new Scanner(System.in);
+        Random rand= new Random();
         joueurCourant=ListeJoueurs[0];
         System.out.println(grilleJeu.etreGagnantePourJoueur(joueurCourant));
         System.out.println(grilleJeu.etreRemplie());
+        for (int i=0;i<5;i++){
+            int l = rand.nextInt(6);
+            int c = rand.nextInt(5);
+            grilleJeu.placerTrouNoir(l, c);
+        }
         while(grilleJeu.etreGagnantePourJoueur(joueurCourant)==false && grilleJeu.etreRemplie()==false){
             System.out.println(grilleJeu.etreGagnantePourJoueur(joueurCourant));
             System.out.println(grilleJeu.etreRemplie());
