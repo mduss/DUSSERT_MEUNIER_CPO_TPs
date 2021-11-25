@@ -46,10 +46,25 @@ public class Partie {
         joueurCourant=ListeJoueurs[0];
         System.out.println(grilleJeu.etreGagnantePourJoueur(joueurCourant));
         System.out.println(grilleJeu.etreRemplie());
+        //place trou noirs en début de partie
         for (int i=0;i<5;i++){
+            //while (grilleJeu.placerTrouNoir(l,c)==false)
             int l = rand.nextInt(6);
             int c = rand.nextInt(5);
-            grilleJeu.placerTrouNoir(l, c);
+            //créé tableau avec les lignes et colonnes des trous noirs
+            grilleJeu.placerTrouNoir(l,c);
+        }
+        //place désintégrateurs
+        for (int i=0;i<3;i++){
+            int l = rand.nextInt(6);
+            int c = rand.nextInt(5);
+            grilleJeu.placerDésintégrateur(l, c);
+        }
+        for (int i=0;i<2;i++){
+            int p= rand.nextInt(4);
+            //l=tabligneTrouNoirs[p];
+            //c=tabcolonneTrouNoirs[p];
+            //grilleJeu.placerDésintégrateur(l, c);
         }
         while(grilleJeu.etreGagnantePourJoueur(joueurCourant)==false && grilleJeu.etreRemplie()==false){
             System.out.println(grilleJeu.etreGagnantePourJoueur(joueurCourant));
@@ -61,16 +76,54 @@ public class Partie {
             else{
                 joueurCourant=ListeJoueurs[0];
             }
-            int numco;
-            System.out.println(joueurCourant.Nom+" choisissez un numéro de colonne : ");
-            numco=sc.nextInt();
-            while((numco>8||numco<0)||grilleJeu.colonneremplie(numco-1)){
-                System.out.println(joueurCourant.Nom+" choisissez un numéro de colonne : ");
-                numco=sc.nextInt();
+            String choix;
+            System.out.println(joueurCourant.Nom+" Tapez : p pour placer un jeton"
+                    + "d pour placer un désintégrateur"
+                    + "r pour récupérer un de vos jetons");
+            //choix=sc.nextString();
+            if (choix=="d"){
+                if (joueurCourant.nombreDésintégrateur>0){
+                    System.out.println("Placez votre désintégrateur"
+                            + "Ligne : ");
+                    int numligne=sc.nextInt();
+                    System.out.println("Colonne : ");
+                    int numco=sc.nextInt();
+                    if (grilleJeu.celluleOccupee(numligne, numco)){
+                        if (grilleJeu.placerDésintégrateur(numligne, numco)){
+                            joueurCourant.utiliserDesintegrateur();
+                            System.out.println(joueurCourant.Nom +" il vous reste "+joueurCourant.nombreDésintégrateur);
+                        }
+                    }
+                    else{
+                        System.out.println(joueurCourant.Nom +" vous n'avez pas de désintégrateurs"
+                                + "veuillez saisir p ou r");
+                        //choix=sc.nextString();
+                    }
+                }
             }
-            numco-=1;
-            Jeton j=joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1];
-            grilleJeu.ajouterJetonDansColonne(j,numco);
+            else if (choix=="p"){
+                int numco;
+                numco=sc.nextInt();
+                System.out.println("choisissez un numéro de colonne");
+                while((numco>8||numco<0)||grilleJeu.colonneremplie(numco-1)){
+                    System.out.println(joueurCourant.Nom+" choisissez un numéro de colonne : ");
+                    numco=sc.nextInt();
+                }
+                numco-=1;
+                Jeton j=joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1];
+            
+                grilleJeu.ajouterJetonDansColonne(j,numco);
+            }
+            else {
+                System.out.println("Quel jeton voulez-vous récupérer ?"
+                            + "Ligne : ");
+                    int numligne=sc.nextInt();
+                    System.out.println("Colonne : ");
+                    int numco=sc.nextInt();
+                //problème recupérer jeton pas de type jeton
+                Jeton jeton=grilleJeu.recupererJeton(numligne, numco);
+                joueurCourant.ajouterJeton(jeton);
+            }
         }
         System.out.print(joueurCourant.Nom+" a gagné !");
     }

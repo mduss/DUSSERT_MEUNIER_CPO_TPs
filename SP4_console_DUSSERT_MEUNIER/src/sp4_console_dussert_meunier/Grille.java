@@ -174,8 +174,8 @@ public class Grille {
         return false;
     }
     
-    public String recupererJeton(int l,int c){
-        String jeton=cellulesJeu[l][c].lireCouleurDuJeton();
+    public Jeton recupererJeton(int l,int c){
+        Jeton jeton=cellulesJeu[l][c].lireCouleurDuJeton();
         cellulesJeu[l][c].jetonCourant=null;
         return jeton;
     } 

@@ -22,7 +22,16 @@ public class Cellule {
     
     public boolean affecterJeton(Jeton j){
         if (jetonCourant==null){
-            jetonCourant=j;
+            if (présenceTrouNoir()){
+                System.out.println("Votre Jeton a été englouti par un trou noir...");
+            }
+            else if (présenceDésintégrateur()){
+                recupererDesintegrateur ();
+                System.out.println("Vous avez récupéré un désintégrateur !");
+            }
+            else {
+                jetonCourant=j;
+            }
             return true;
         }
         else {
