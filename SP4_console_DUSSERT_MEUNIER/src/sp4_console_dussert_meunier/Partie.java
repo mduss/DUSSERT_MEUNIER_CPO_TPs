@@ -108,9 +108,9 @@ public class Partie {
                     int numco=sc.nextInt();
                     System.out.println("Ligne : ");
                     int numligne =sc.nextInt();
-                    if (grilleJeu.celluleOccupee(6-numligne, numco-1)){
-                        if (grilleJeu.celluleOccupee(6-numligne, numco-1)){
-                            grilleJeu.supprimerJeton(6-numligne, numco-1);
+                    if (grilleJeu.celluleOccupee(numligne-1, numco-1)){
+                        if (grilleJeu.celluleOccupee(numligne-1, numco-1)){
+                            grilleJeu.supprimerJeton(numligne-1, numco-1);
                             grilleJeu.tasserGrille(numco);
                             joueurCourant.utiliserDesintegrateur();
                             cg=true;
@@ -133,9 +133,9 @@ public class Partie {
                 }
                 numco-=1;
                 Jeton j=joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1];
-                int i=5;
+                int i=0;
                 while (grilleJeu.cellulesJeu[i][numco].jetonCourant!=null){
-                    i--;
+                    i++;
                 }
                 if (grilleJeu.cellulesJeu[i][numco].présenceDésintégrateur()){
                     joueurCourant.nombreDésintégrateur+=1;
@@ -151,7 +151,8 @@ public class Partie {
                     System.out.println("Colonne : ");
                     int numco=sc.nextInt();
                 
-                Jeton jeton=grilleJeu.recupererJeton(numligne, numco);
+                Jeton jeton=grilleJeu.recupererJeton(numligne-1, numco-1);
+                grilleJeu.tasserGrille(numco);
                 joueurCourant.ajouterJeton(jeton);
             }
         }

@@ -68,7 +68,7 @@ public class Grille {
                    System.out.print("\u001B[33m  0  ");
                 }
                 else {
-                    System.out.print("\u001B[0m  -  "); //ajouter couleur noir
+                    System.out.print("\u001B[0m  -  ");
                 }
             }
         }
@@ -137,16 +137,16 @@ public class Grille {
     }
     
     public void tasserGrille(int c){
-        for (int i=5;i>=0;i--){
+        for (int i=0;i<5;i++){
             if (cellulesJeu[i][c].jetonCourant==null){
                 for (int j=i;j<5;j++){
                     cellulesJeu[j][c].jetonCourant=cellulesJeu[j+1][c].jetonCourant;
                     cellulesJeu[j][c].désintégrateur=cellulesJeu[j+1][c].désintégrateur;
                     cellulesJeu[j][c].trouNoir=cellulesJeu[j+1][c].trouNoir;
                 }
-                cellulesJeu[6][c].jetonCourant=null;
-                cellulesJeu[6][c].désintégrateur=false;
-                cellulesJeu[6][c].trouNoir=false;                
+                cellulesJeu[5][c].jetonCourant=null;
+                cellulesJeu[5][c].désintégrateur=false;
+                cellulesJeu[5][c].trouNoir=false;                
             }
         }
     }
