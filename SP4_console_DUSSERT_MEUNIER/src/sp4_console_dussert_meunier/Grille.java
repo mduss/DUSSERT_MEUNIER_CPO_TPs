@@ -175,7 +175,7 @@ public class Grille {
     }
     
     public Jeton recupererJeton(int l,int c){
-        Jeton jeton=cellulesJeu[l][c].lireCouleurDuJeton();
+        Jeton jeton=cellulesJeu[l][c].recupererJeton();
         cellulesJeu[l][c].jetonCourant=null;
         return jeton;
     } 

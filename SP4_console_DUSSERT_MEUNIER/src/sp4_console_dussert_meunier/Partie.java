@@ -46,25 +46,38 @@ public class Partie {
         joueurCourant=ListeJoueurs[0];
         System.out.println(grilleJeu.etreGagnantePourJoueur(joueurCourant));
         System.out.println(grilleJeu.etreRemplie());
-        //place trou noirs en début de partie
+        
+        int l;
+        int c;
+//place trou noirs en début de partie
+        int tabligneTrouNoirs[]=new int[5];
+        int tabcolonneTrouNoirs[]=new int[5];
         for (int i=0;i<5;i++){
-            //while (grilleJeu.placerTrouNoir(l,c)==false)
-            int l = rand.nextInt(6);
-            int c = rand.nextInt(5);
-            //créé tableau avec les lignes et colonnes des trous noirs
+            l = rand.nextInt(6);
+            c = rand.nextInt(5);
+            while (grilleJeu.cellulesJeu[l][c].présenceTrouNoir()){
+                l = rand.nextInt(6);
+                c = rand.nextInt(5);
+            }
+            l=tabligneTrouNoirs[i];
+            c=tabcolonneTrouNoirs[i];
             grilleJeu.placerTrouNoir(l,c);
         }
-        //place désintégrateurs
+//place désintégrateurs
         for (int i=0;i<3;i++){
-            int l = rand.nextInt(6);
-            int c = rand.nextInt(5);
+            l = rand.nextInt(6);
+            c = rand.nextInt(5);
+            while (grilleJeu.cellulesJeu[l][c].présenceTrouNoir()||grilleJeu.cellulesJeu[l][c].désintégrateur){
+                l = rand.nextInt(6);
+                c = rand.nextInt(5);
+            }
             grilleJeu.placerDésintégrateur(l, c);
         }
         for (int i=0;i<2;i++){
             int p= rand.nextInt(4);
-            //l=tabligneTrouNoirs[p];
-            //c=tabcolonneTrouNoirs[p];
-            //grilleJeu.placerDésintégrateur(l, c);
+            l=tabligneTrouNoirs[p];
+            c=tabcolonneTrouNoirs[p];
+            grilleJeu.placerDésintégrateur(l, c);
         }
         while(grilleJeu.etreGagnantePourJoueur(joueurCourant)==false && grilleJeu.etreRemplie()==false){
             System.out.println(grilleJeu.etreGagnantePourJoueur(joueurCourant));
@@ -80,7 +93,7 @@ public class Partie {
             System.out.println(joueurCourant.Nom+" Tapez : p pour placer un jeton"
                     + "d pour placer un désintégrateur"
                     + "r pour récupérer un de vos jetons");
-            //choix=sc.nextString();
+            choix=sc.nextLine();
             if (choix=="d"){
                 if (joueurCourant.nombreDésintégrateur>0){
                     System.out.println("Placez votre désintégrateur"
@@ -97,7 +110,7 @@ public class Partie {
                     else{
                         System.out.println(joueurCourant.Nom +" vous n'avez pas de désintégrateurs"
                                 + "veuillez saisir p ou r");
-                        //choix=sc.nextString();
+                        choix=sc.nextLine();
                     }
                 }
             }
@@ -120,7 +133,7 @@ public class Partie {
                     int numligne=sc.nextInt();
                     System.out.println("Colonne : ");
                     int numco=sc.nextInt();
-                //problème recupérer jeton pas de type jeton
+                
                 Jeton jeton=grilleJeu.recupererJeton(numligne, numco);
                 joueurCourant.ajouterJeton(jeton);
             }
