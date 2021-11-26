@@ -97,27 +97,32 @@ public class Partie {
             sc.reset();
             sc=new Scanner(System.in);
             choix=sc.nextLine();
+            while (!"r".equals(choix)&&!"p".equals(choix)&&!"d".equals(choix)){
+                System.out.println("tapez p ou r ou d");
+                sc=new Scanner(System.in);
+                choix=sc.nextLine();
+            }
             if ("d".equals(choix)){
                 if (joueurCourant.nombreDésintégrateur>0){
-                    System.out.println("Placez votre désintégrateur \nLigne : ");
-                    int numligne=sc.nextInt();
-                    System.out.println("Colonne : ");
+                    System.out.println("Placez votre désintégrateur \nColonne : ");
                     int numco=sc.nextInt();
-                    if (grilleJeu.celluleOccupee(numligne, numco)){
-                        if (grilleJeu.celluleOccupee(numligne, numco)){
-                            grilleJeu.supprimerJeton(numligne, numco);
+                    System.out.println("Ligne : ");
+                    int numligne =sc.nextInt();
+                    if (grilleJeu.celluleOccupee(6-numligne, numco-1)){
+                        if (grilleJeu.celluleOccupee(6-numligne, numco-1)){
+                            grilleJeu.supprimerJeton(6-numligne, numco-1);
                             grilleJeu.tasserGrille(numco);
                             joueurCourant.utiliserDesintegrateur();
                             cg=true;
                             System.out.println(joueurCourant.Nom +" il vous reste "+joueurCourant.nombreDésintégrateur);
                         }
                     }
-                    else{
+                }
+                else{
                         cg=false;
                         System.out.println(joueurCourant.Nom +" vous n'avez pas de désintégrateurs");
                     }
                 }
-            }
             else if ("p".equals(choix)){
                 int numco;
                 System.out.println("choisissez un numéro de colonne");
@@ -128,6 +133,13 @@ public class Partie {
                 }
                 numco-=1;
                 Jeton j=joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1];
+                int i=5;
+                while (grilleJeu.cellulesJeu[i][numco].jetonCourant!=null){
+                    i--;
+                }
+                if (grilleJeu.cellulesJeu[i][numco].présenceDésintégrateur()){
+                    joueurCourant.nombreDésintégrateur+=1;
+                }
                 if (grilleJeu.ajouterJetonDansColonne(j,numco)){
                     joueurCourant.nombreJetonsRestants-=1;
                     cg=true;
