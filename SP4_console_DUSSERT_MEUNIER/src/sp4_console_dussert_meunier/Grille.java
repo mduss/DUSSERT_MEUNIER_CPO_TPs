@@ -52,7 +52,16 @@ public class Grille {
         for (int i=5;i>=0;i--){
             System.out.println();
             for (int j=0;j<7;j++){
-                if (cellulesJeu[i][j].lireCouleurDuJeton()=="rouge") {
+                if (cellulesJeu[i][j].présenceTrouNoir()&&cellulesJeu[i][j].présenceDésintégrateur()){
+                    System.out.print("\u001B[0m  @  ");
+                }
+                else if (cellulesJeu[i][j].présenceTrouNoir()){
+                    System.out.print("\u001B[0m  @  ");
+                }
+                else if (cellulesJeu[i][j].présenceDésintégrateur()){
+                    System.out.print("\u001B[0m  #  ");
+                }
+                else if (cellulesJeu[i][j].lireCouleurDuJeton()=="rouge") {
                     System.out.print("\u001B[31m  0  ");
                 }
                 else if (cellulesJeu[i][j].lireCouleurDuJeton()=="jaune") {
