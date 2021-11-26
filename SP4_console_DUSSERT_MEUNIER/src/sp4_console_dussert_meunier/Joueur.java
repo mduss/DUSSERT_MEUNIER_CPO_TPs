@@ -30,5 +30,6 @@ public class Joueur {
     }
     public void utiliserDesintegrateur(){
         nombreDésintégrateur-=1;
+        
     }
 }

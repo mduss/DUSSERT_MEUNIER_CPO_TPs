@@ -79,39 +79,46 @@ public class Partie {
             c=tabcolonneTrouNoirs[p];
             grilleJeu.placerDésintégrateur(l, c);
         }
+        boolean cg=false;
         while(grilleJeu.etreGagnantePourJoueur(joueurCourant)==false && grilleJeu.etreRemplie()==false){
             System.out.println(grilleJeu.etreGagnantePourJoueur(joueurCourant));
             System.out.println(grilleJeu.etreRemplie());
             grilleJeu.afficherGrilleSurConsole();
-            if (joueurCourant==ListeJoueurs[0]){
+            if (cg){
+                if (joueurCourant==ListeJoueurs[0]){
                 joueurCourant=ListeJoueurs[1];
-            }
-            else{
-                joueurCourant=ListeJoueurs[0];
+                }
+                else{
+                    joueurCourant=ListeJoueurs[0];
+                }
             }
             String choix;
             System.out.println(joueurCourant.Nom+" tapez : \np pour placer un jeton \nd pour placer un désintégrateur \nr pour récupérer un de vos jetons");
+            sc.reset();
+            sc=new Scanner(System.in);
             choix=sc.nextLine();
-            if (" d".equals(choix)){
+            if ("d".equals(choix)){
                 if (joueurCourant.nombreDésintégrateur>0){
                     System.out.println("Placez votre désintégrateur \nLigne : ");
                     int numligne=sc.nextInt();
                     System.out.println("Colonne : ");
                     int numco=sc.nextInt();
                     if (grilleJeu.celluleOccupee(numligne, numco)){
-                        if (grilleJeu.placerDésintégrateur(numligne, numco)){
+                        if (grilleJeu.celluleOccupee(numligne, numco)){
+                            grilleJeu.supprimerJeton(numligne, numco);
+                            grilleJeu.tasserGrille(numco);
                             joueurCourant.utiliserDesintegrateur();
+                            cg=true;
                             System.out.println(joueurCourant.Nom +" il vous reste "+joueurCourant.nombreDésintégrateur);
                         }
                     }
                     else{
-                        System.out.println(joueurCourant.Nom +" vous n'avez pas de désintégrateurs"
-                                + "veuillez saisir p ou r");
-                        choix=sc.nextLine();
+                        cg=false;
+                        System.out.println(joueurCourant.Nom +" vous n'avez pas de désintégrateurs");
                     }
                 }
             }
-            if ("p".equals(choix)){
+            else if ("p".equals(choix)){
                 int numco;
                 System.out.println("choisissez un numéro de colonne");
                 numco=sc.nextInt();
@@ -121,12 +128,13 @@ public class Partie {
                 }
                 numco-=1;
                 Jeton j=joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1];
-                grilleJeu.ajouterJetonDansColonne(j,numco);
-                joueurCourant.nombreJetonsRestants-=1;
+                if (grilleJeu.ajouterJetonDansColonne(j,numco)){
+                    joueurCourant.nombreJetonsRestants-=1;
+                    cg=true;
+                }
             }
             else {
-                System.out.println("Quel jeton voulez-vous récupérer ?"
-                            + "Ligne : ");
+                System.out.println("Quel jeton voulez-vous récupérer ? \nLigne : ");
                     int numligne=sc.nextInt();
                     System.out.println("Colonne : ");
                     int numco=sc.nextInt();

@@ -77,10 +77,10 @@ public class Grille {
     
     public boolean celluleOccupee(int l,int c) {
         if (cellulesJeu[l][c].jetonCourant!=null){
-            return false;
+            return true;
         }
         else {
-            return true;
+            return false;
         }
     }
     
