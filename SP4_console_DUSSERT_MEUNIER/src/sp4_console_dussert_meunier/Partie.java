@@ -111,7 +111,7 @@ public class Partie {
                     if (grilleJeu.celluleOccupee(numligne-1, numco-1)){
                         if (grilleJeu.celluleOccupee(numligne-1, numco-1)){
                             grilleJeu.supprimerJeton(numligne-1, numco-1);
-                            grilleJeu.tasserGrille(numco);
+                            grilleJeu.tasserGrille(numco-1);
                             joueurCourant.utiliserDesintegrateur();
                             cg=true;
                             System.out.println(joueurCourant.Nom +" il vous reste "+joueurCourant.nombreDésintégrateur);
@@ -152,10 +152,11 @@ public class Partie {
                     int numco=sc.nextInt();
                 
                 Jeton jeton=grilleJeu.recupererJeton(numligne-1, numco-1);
-                grilleJeu.tasserGrille(numco);
+                grilleJeu.tasserGrille(numco-1);
                 joueurCourant.ajouterJeton(jeton);
             }
         }
+        grilleJeu.afficherGrilleSurConsole();
         System.out.print(joueurCourant.Nom+" a gagné !");
     }
 }
