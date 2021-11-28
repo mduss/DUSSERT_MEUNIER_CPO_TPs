@@ -23,9 +23,7 @@ public class SP4_console_DUSSERT_MEUNIER {
         partie.initialiserPartie();
         partie.attribuerCouleurAuxJoueurs();
         partie.debuterPartie();
-        
-        
-        
+           
      
     }
      
