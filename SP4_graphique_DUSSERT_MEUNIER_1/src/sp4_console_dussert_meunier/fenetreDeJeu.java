@@ -234,7 +234,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         message.setRows(5);
         jScrollPane2.setViewportView(message);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 440, 290, 190));
 
