@@ -25,6 +25,7 @@ public class SP4_console_DUSSERT_MEUNIER {
         partie.debuterPartie();
         
         
+        
      
     }
      
