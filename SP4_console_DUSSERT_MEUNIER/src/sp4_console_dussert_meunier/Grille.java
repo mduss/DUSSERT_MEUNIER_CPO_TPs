@@ -136,6 +136,7 @@ public class Grille {
         return false;
     }
     
+    
     public void tasserGrille(int c){
         for (int i=0;i<5;i++){
             if (cellulesJeu[i][c].jetonCourant==null){
