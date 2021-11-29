@@ -20,6 +20,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         initComponents();
         panneau_InfoJoueurs.setVisible(false);
         panneau_InfoPartie.setVisible(false);
+        Grille grilleJeu=new Grille();
         
         for (int i=5;i>=0;i--){
             for (int j=0;j<7;j++){
