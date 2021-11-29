@@ -141,8 +141,6 @@ public class Grille {
             if (cellulesJeu[i][c].jetonCourant==null){
                 for (int j=i;j<5;j++){
                     cellulesJeu[j][c].jetonCourant=cellulesJeu[j+1][c].jetonCourant;
-                    cellulesJeu[j][c].désintégrateur=cellulesJeu[j+1][c].désintégrateur;
-                    cellulesJeu[j][c].trouNoir=cellulesJeu[j+1][c].trouNoir;
                 }
                 cellulesJeu[5][c].jetonCourant=null;
                 cellulesJeu[5][c].désintégrateur=false;
