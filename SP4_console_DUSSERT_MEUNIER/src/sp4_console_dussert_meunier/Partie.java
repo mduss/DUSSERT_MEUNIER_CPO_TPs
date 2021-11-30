@@ -161,5 +161,6 @@ public class Partie {
         }
         grilleJeu.afficherGrilleSurConsole();
         System.out.print(joueurCourant.Nom+" a gagné !");
+    
     }
 }
