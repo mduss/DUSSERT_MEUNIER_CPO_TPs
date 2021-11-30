@@ -251,6 +251,8 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         panneau_InfoJoueurs.setVisible(true);
         panneau_InfoPartie.setVisible(true);
         initialisePartie();
+        panneau_Grille.repaint();
+        btn_start.setEnabled(false);
     }//GEN-LAST:event_btn_startActionPerformed
 
     /**
@@ -290,7 +292,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         
     public void initialisePartie () {   
         Random rand= new Random();
-        grilleJeu =new Grille();
+        Grille grilleJeu =new Grille();
         String nomJoueur1=nom_joueur1.getText();
         String nomJoueur2=nom_joueur2.getText();
         Joueur J1 = new Joueur(nomJoueur1);
@@ -308,12 +310,20 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         }
         ListeJoueurs[0].ListeJetons=new Jeton[21]; 
         for (int i=0; i<21; i++){
-            ListeJoueurs[0].ajouterJeton(new Jeton("rouge"));
+            ListeJoueurs[0].ajouterJeton(new Jeton(J1.Couleur));
         }
         ListeJoueurs[1].ListeJetons=new Jeton[21];
         for (int i=0; i<21; i++){
-            ListeJoueurs[1].ajouterJeton(new Jeton("jaune")); 
+            ListeJoueurs[1].ajouterJeton(new Jeton(J2.Couleur)); 
         }
+        
+        lbl_j1_nom.setText(nomJoueur1);
+        lbl_j2_nom.setText(nomJoueur2);
+        lbl_j1_couleur.setText(J1.Couleur);
+        lbl_j2_couleur.setText(J2.Couleur);
+        lbl_j1_desint.setText(J1.nombreDésintégrateur+"");
+        lbl_j2_desint.setText(J2.nombreDésintégrateur+"");
+        
         int l;
         int c;
 //place trou noirs en début de partie
@@ -346,6 +356,9 @@ public class fenetreDeJeu extends javax.swing.JFrame {
             c=tabcolonneTrouNoirs[p];
             grilleJeu.placerDésintégrateur(l, c);
         }
+        int premierJ=rand.nextInt(1);
+        joueurCourant=ListeJoueurs[premierJ];
+        lbl_jCourant.setText(joueurCourant.Nom);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_col_0;
