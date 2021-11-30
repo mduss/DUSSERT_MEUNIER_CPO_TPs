@@ -156,6 +156,9 @@ public class Partie {
                 joueurCourant.ajouterJeton(jeton);
             }
         }
+        if (grilleJeu.etreRemplie()){
+            System.out.print("Match nul !");
+        }
         grilleJeu.afficherGrilleSurConsole();
         System.out.print(joueurCourant.Nom+" a gagné !");
     }
