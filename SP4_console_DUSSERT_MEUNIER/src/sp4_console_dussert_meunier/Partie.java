@@ -38,25 +38,27 @@ public class Partie {
     }
     
     public void initialiserPartie(){
-        Random rand= new Random();
+        
         grilleJeu =new Grille();
         
+
         ListeJoueurs[0].ListeJetons=new Jeton[21]; 
         for (int i=0; i<21; i++){
-            ListeJoueurs[0].ajouterJeton(new Jeton(ListeJoueurs[0].Couleur));
+            ListeJoueurs[0].ajouterJeton(new Jeton("jaune"));
         }
         ListeJoueurs[1].ListeJetons=new Jeton[21];
         for (int i=0; i<21; i++){
-            ListeJoueurs[1].ajouterJeton(new Jeton(ListeJoueurs[1].Couleur)); 
+            ListeJoueurs[1].ajouterJeton(new Jeton("rouge")); 
         }
-        int premierJ=rand.nextInt(1);
-        joueurCourant=ListeJoueurs[premierJ];
+       
+        
     }
     
     public void debuterPartie(){
         Scanner sc=new Scanner(System.in);
         Random rand= new Random();
-        joueurCourant=ListeJoueurs[0];
+        int premierJ=rand.nextInt(1);
+        joueurCourant=ListeJoueurs[premierJ];
         
         int l;
         int c;
