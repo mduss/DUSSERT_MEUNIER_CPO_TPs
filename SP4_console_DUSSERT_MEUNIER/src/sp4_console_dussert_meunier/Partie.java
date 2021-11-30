@@ -33,6 +33,8 @@ public class Partie {
             ListeJoueurs[1].Couleur="rouge";
             ListeJoueurs[0].Couleur="jaune";
         }
+        System.out.println(ListeJoueurs[0].Nom+" ta couleur est "+ListeJoueurs[0].Couleur);
+        System.out.println(ListeJoueurs[1].Nom+" ta couleur est "+ListeJoueurs[1].Couleur);
     }
     
     public void initialiserPartie(){
@@ -55,8 +57,6 @@ public class Partie {
         Scanner sc=new Scanner(System.in);
         Random rand= new Random();
         joueurCourant=ListeJoueurs[0];
-        System.out.println(grilleJeu.etreGagnantePourJoueur(joueurCourant));
-        System.out.println(grilleJeu.etreRemplie());
         
         int l;
         int c;
@@ -92,8 +92,6 @@ public class Partie {
         }
         boolean cg=false;
         while(grilleJeu.etreGagnantePourJoueur(joueurCourant)==false && grilleJeu.etreRemplie()==false){
-            System.out.println(grilleJeu.etreGagnantePourJoueur(joueurCourant));
-            System.out.println(grilleJeu.etreRemplie());
             grilleJeu.afficherGrilleSurConsole();
             if (cg){
                 if (joueurCourant==ListeJoueurs[0]){
