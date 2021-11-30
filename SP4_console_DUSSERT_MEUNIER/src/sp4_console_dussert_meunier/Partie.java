@@ -23,21 +23,32 @@ public class Partie {
     }
     
     public void attribuerCouleurAuxJoueurs(){
-        ListeJoueurs[0].Couleur="rouge";
-        ListeJoueurs[1].Couleur="jaune";
+        Random rand= new Random();
+        int couleur=rand.nextInt(1);
+        if (couleur==1){
+            ListeJoueurs[0].Couleur="rouge";
+            ListeJoueurs[1].Couleur="jaune";
+        }
+        else {
+            ListeJoueurs[1].Couleur="rouge";
+            ListeJoueurs[0].Couleur="jaune";
+        }
     }
     
     public void initialiserPartie(){
+        Random rand= new Random();
         grilleJeu =new Grille();
         
         ListeJoueurs[0].ListeJetons=new Jeton[21]; 
         for (int i=0; i<21; i++){
-            ListeJoueurs[0].ajouterJeton(new Jeton("rouge"));
+            ListeJoueurs[0].ajouterJeton(new Jeton(ListeJoueurs[0].Couleur));
         }
         ListeJoueurs[1].ListeJetons=new Jeton[21];
         for (int i=0; i<21; i++){
-            ListeJoueurs[1].ajouterJeton(new Jeton("jaune"));
+            ListeJoueurs[1].ajouterJeton(new Jeton(ListeJoueurs[1].Couleur)); 
         }
+        int premierJ=rand.nextInt(1);
+        joueurCourant=ListeJoueurs[premierJ];
     }
     
     public void debuterPartie(){
