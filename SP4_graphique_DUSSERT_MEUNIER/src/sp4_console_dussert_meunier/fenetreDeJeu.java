@@ -202,6 +202,11 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         getContentPane().add(btn_col_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, -1, -1));
 
         btn_col_0.setText("1");
+        btn_col_0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_col_0ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_col_0, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, -1));
 
         panneau_InfoPartie.setBackground(new java.awt.Color(0, 204, 204));
@@ -254,6 +259,10 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         panneau_Grille.repaint();
         btn_start.setEnabled(false);
     }//GEN-LAST:event_btn_startActionPerformed
+
+    private void btn_col_0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_0ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_col_0ActionPerformed
 
     /**
      * @param args the command line arguments
