@@ -15,6 +15,10 @@ import javax.swing.ImageIcon;
 public class CelluleGraphique extends JButton {
     Cellule celluleAssociee;
     ImageIcon im_vide = new javax.swing.ImageIcon(getClass().getResource("/image/celluleVide.png"));
+    ImageIcon im_desint = new javax.swing.ImageIcon(getClass().getResource("/image/desintegrateur.png"));
+    ImageIcon im_jJaune = new javax.swing.ImageIcon(getClass().getResource("/image/jetonJaune.png"));
+    ImageIcon im_jRouge = new javax.swing.ImageIcon(getClass().getResource("/image/jetonRouge.png"));
+    ImageIcon im_trouNoir = new javax.swing.ImageIcon(getClass().getResource("/image/trouNoir.png"));
     
     public CelluleGraphique(Cellule uneCellule){
         celluleAssociee=uneCellule;

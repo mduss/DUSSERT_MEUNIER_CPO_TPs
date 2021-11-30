@@ -5,6 +5,8 @@
  */
 package sp4_console_dussert_meunier;
 
+import java.util.Random;
+import java.util.Scanner;
 /**
  *
  * @author dusse
@@ -248,6 +250,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
         panneau_InfoJoueurs.setVisible(true);
         panneau_InfoPartie.setVisible(true);
+        initialisePartie();
     }//GEN-LAST:event_btn_startActionPerformed
 
     /**
@@ -284,7 +287,66 @@ public class fenetreDeJeu extends javax.swing.JFrame {
             }
         });
     }
-
+        
+    public void initialisePartie () {   
+        Random rand= new Random();
+        grilleJeu =new Grille();
+        String nomJoueur1=nom_joueur1.getText();
+        String nomJoueur2=nom_joueur2.getText();
+        Joueur J1 = new Joueur(nomJoueur1);
+        Joueur J2 = new Joueur(nomJoueur2);
+        ListeJoueurs[0]=J1;
+        ListeJoueurs[1]=J2;
+        int couleur=rand.nextInt(1);
+        if (couleur==1){
+            ListeJoueurs[0].Couleur="rouge";
+            ListeJoueurs[1].Couleur="jaune";
+        }
+        else {
+            ListeJoueurs[1].Couleur="rouge";
+            ListeJoueurs[0].Couleur="jaune";
+        }
+        ListeJoueurs[0].ListeJetons=new Jeton[21]; 
+        for (int i=0; i<21; i++){
+            ListeJoueurs[0].ajouterJeton(new Jeton("rouge"));
+        }
+        ListeJoueurs[1].ListeJetons=new Jeton[21];
+        for (int i=0; i<21; i++){
+            ListeJoueurs[1].ajouterJeton(new Jeton("jaune")); 
+        }
+        int l;
+        int c;
+//place trou noirs en début de partie
+        int tabligneTrouNoirs[]=new int[5];
+        int tabcolonneTrouNoirs[]=new int[5];
+        for (int i=0;i<5;i++){
+            l = rand.nextInt(6);
+            c = rand.nextInt(5);
+            while (grilleJeu.cellulesJeu[l][c].présenceTrouNoir()){
+                l = rand.nextInt(6);
+                c = rand.nextInt(5);
+            }
+            tabligneTrouNoirs[i]=l;
+            tabcolonneTrouNoirs[i]=c;
+            grilleJeu.placerTrouNoir(l,c);
+        }
+//place désintégrateurs
+        for (int i=0;i<3;i++){
+            l = rand.nextInt(6);
+            c = rand.nextInt(5);
+            while (grilleJeu.cellulesJeu[l][c].présenceTrouNoir()||grilleJeu.cellulesJeu[l][c].désintégrateur){
+                l = rand.nextInt(6);
+                c = rand.nextInt(5);
+            }
+            grilleJeu.placerDésintégrateur(l, c);
+        }
+        for (int i=0;i<2;i++){
+            int p= rand.nextInt(4);
+            l=tabligneTrouNoirs[p];
+            c=tabcolonneTrouNoirs[p];
+            grilleJeu.placerDésintégrateur(l, c);
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_col_0;
     private javax.swing.JButton btn_col_1;
