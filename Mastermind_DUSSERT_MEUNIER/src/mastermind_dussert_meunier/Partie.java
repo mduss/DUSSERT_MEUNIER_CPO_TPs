@@ -14,13 +14,13 @@ public class Partie {
     
     public void CommencerPartie(){
         //initialiserCombi();
-        while(combiGagnante()==false && essai<=12){
+        //while(combiGagnante()==false && essai<=12){
             //choisir combi
             //similitudesPosi
             //similitudesCoul
             //afficher console
             essai++;
-        }
+       // }
         if(essai<=12){
             System.out.println("Vous avez gagné au bout de "+essai+" essais !");
         }
