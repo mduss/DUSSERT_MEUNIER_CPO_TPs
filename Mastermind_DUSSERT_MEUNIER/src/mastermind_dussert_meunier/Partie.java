@@ -27,7 +27,7 @@ public class Partie {
             sc.reset();
             sc=new Scanner(System.in);
             couleur=sc.nextLine();
-            while (couleur!="bl"&&couleur!="ro"&&couleur!="ja"&&couleur!="ve"&&couleur!="vi"&&couleur!="wh"){
+            while (!"bl".equals(couleur)&&!"ro".equals(couleur)&&!"ja".equals(couleur)&&!"ve".equals(couleur)&&!"vi".equals(couleur)&&!"wh".equals(couleur)){
                 System.out.println("Saisissez une couelur valide : ");
                 sc.reset();
                 sc=new Scanner(System.in);
