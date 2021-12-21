@@ -11,16 +11,19 @@ package mastermind_dussert_meunier;
  */
 public class Partie {
     int essai;
+    Combinaisons combinaison;
+    Combinaisons combiCourante;
+    Affichage grille= new Affichage();
     
     public void CommencerPartie(){
-        //initialiserCombi();
-        //while(combiGagnante()==false && essai<=12){
+        combinaison.initialiserCombi();
+        while(combiCourante.combiGagnante()==false && essai<=12){
             //choisir combi
-            //similitudesPosi
-            //similitudesCoul
-            //afficher console
+            int posi =combiCourante.SimilitudePosi();
+            int coul=combiCourante.SimilitudeCoul();
+            grille.
             essai++;
-       // }
+        }
         if(essai<=12){
             System.out.println("Vous avez gagné au bout de "+essai+" essais !");
         }

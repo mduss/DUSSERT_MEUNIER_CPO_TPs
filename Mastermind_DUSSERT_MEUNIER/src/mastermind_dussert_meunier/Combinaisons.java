@@ -16,21 +16,21 @@ public class Combinaisons {
     String [] couleur;
     Combinaisons combinaison;
     Combinaisons combiCourante;
-    String[] Choix ={"ro","bl","ja","ve","vi"};
+    String[] Choix ={"ro","bl","ja","ve","vi","wh"};
     int posi;
     int coul;
     
-    public void initialiserCombi(){
-        combinaison = new Combinaisons(); 
+    public void initialiserCombi(){ 
         couleur = new String[4];
         int numco;
         for (int i=0;i<4;i++){
             numco=rand.nextInt(6);
-            combinaison.couleur[i]=Choix[numco];
+            couleur[i]=Choix[numco];
         }
     }
     
     public int SimilitudePosi(){
+        posi=0;
         for (int i=0;i<4;i++){
             if (combiCourante.couleur[i]==combinaison.couleur[i]){
                 posi++;
@@ -40,6 +40,7 @@ public class Combinaisons {
     }
     
     public int SimilitudeCoul(){
+        coul=0;
         for (int i=0;i<4;i++){
             for (int j=0;j<4;j++){
                 if (combiCourante.couleur[i]==combinaison.couleur[j]){
