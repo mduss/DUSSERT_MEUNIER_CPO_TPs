@@ -12,7 +12,7 @@ import java.util.Random;
  * @author dusse
  */
 public class Combinaisons {
-    Random rand= new Random();
+    
     String [] couleur;
     Combinaisons combinaison;
     Combinaisons combiCourante;
@@ -21,6 +21,7 @@ public class Combinaisons {
     int coul;
     
     public void initialiserCombi(){ 
+        Random rand= new Random();
         couleur = new String[4];
         int numco;
         for (int i=0;i<4;i++){
@@ -30,6 +31,8 @@ public class Combinaisons {
     }
     
     public int SimilitudePosi(){
+        combiCourante=new Combinaisons();
+        combinaison=new Combinaisons();
         posi=0;
         for (int i=0;i<4;i++){
             if (combiCourante.couleur[i]==combinaison.couleur[i]){

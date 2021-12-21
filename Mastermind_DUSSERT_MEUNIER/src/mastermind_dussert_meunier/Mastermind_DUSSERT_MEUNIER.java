@@ -16,7 +16,8 @@ public class Mastermind_DUSSERT_MEUNIER {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-    
+        Partie partie=new Partie();
+        partie.CommencerPartie();
     }
     
 }
