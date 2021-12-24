@@ -21,6 +21,7 @@ public class Partie {
         Scanner sc=new Scanner(System.in);
         combinaison.initialiserCombi();
         String couleur;
+        grille.affichageJeu();
         System.out.println("Choisissez votre combinaison de couleurs !");
         for (int i=0;i<4;i++){
             System.out.println("Couleur "+i+1+": \nSaisissez : \nro pour rouge \nbl pour bleu \nja pour jaune \nve pour vert \nvi pour violet \nwh pour blanc");
@@ -33,9 +34,10 @@ public class Partie {
                 sc=new Scanner(System.in);
                 couleur=sc.nextLine();
             }
-            combiCourante.couleur[i]=sc.nextLine();
+            combiCourante.couleur[i]=couleur;
         }
-        while(combiCourante.combiGagnante()==false && essai<=12){
+        essai++;
+        while(combiCourante.combiGagnante()==false && essai<12){
             grille.affichageJeu();
             //choisir combi
             System.out.println("Choisissez votre combinaison de couleurs !");
@@ -43,10 +45,10 @@ public class Partie {
                 System.out.println("Couleur "+i+1+": \nSaisissez : \nro pour rouge \nbl pour bleu \nja pour jaune \nve pour vert \nvi pour violet \nwh pour blanc");
                 couleur=sc.nextLine();
                 while ("bl"!=couleur&&"ro"!=couleur&&"ja"!=couleur&&"ve"!=couleur&&"vi"!=couleur&&"wh"!=couleur){
-                    System.out.println("Saisissez une couelur valide : ");
+                    System.out.println("Saisiss&ez une couelur valide : ");
                     couleur=sc.nextLine();
                 }
-                combiCourante.couleur[i]=sc.nextLine();
+                combiCourante.couleur[i]=couleur;
             }
             int posi =combiCourante.SimilitudePosi();
             int coul=combiCourante.SimilitudeCoul();
