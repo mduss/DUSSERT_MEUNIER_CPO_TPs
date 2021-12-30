@@ -18,8 +18,6 @@ public class Affichage {
     Combinaisons combinaison;
     Combinaisons combiCourante;
     String[] Choix ={"ro","bl","ja","ve","vi","wh"};
-    int posi;
-    int coul;
     
     
     public void tableaux(int tent, int posi, int coul,Combinaisons combiCourante){
@@ -69,7 +67,7 @@ public class Affichage {
         }
     }
     
-    public void initialiserCombi(){ 
+    public String [] initialiserCombi(){ 
         Random rand= new Random();
         String [] couleur = new String[4];
         int numco;
@@ -77,36 +75,9 @@ public class Affichage {
             numco=rand.nextInt(6);
             couleur[i]=Choix[numco];
         }
-        combinaison= new Combinaisons(couleur);
+        return couleur;
     }
     
     
-    public int SimilitudePosi(){
-        posi=0;
-        for (int i=0;i<4;i++){
-            if (combiCourante.couleur[i]==combinaison.couleur[i]){
-                posi++;
-            }
-        }
-        return posi;
-    }
     
-    public int SimilitudeCoul(){
-        coul=0;
-        for (int i=0;i<4;i++){
-            for (int j=0;j<4;j++){
-                if (combiCourante.couleur[i]==combinaison.couleur[j]){
-                    coul++;
-                }
-            }
-        }
-        return coul;
-    }
-    
-    public boolean combiGagnante(){
-        if (SimilitudePosi()==4 && SimilitudeCoul()==4){
-            return true;
-        }
-        return false;
-    }
 }

@@ -15,9 +15,11 @@ public class Partie {
     int essai;
     Affichage grille= new Affichage();
     Combinaisons combiCourante;
+    Combinaisons combinaison;
+   
     public void CommencerPartie(){
         Scanner sc=new Scanner(System.in);
-        grille.initialiserCombi();
+        combinaison= new Combinaisons(grille.initialiserCombi());
         String [] couleur= new String[4];
         grille.affichageJeu();
         System.out.println("Choisissez votre combinaison de couleurs !");
@@ -35,7 +37,7 @@ public class Partie {
         }
         combiCourante =new Combinaisons(couleur);
         essai++;
-        while(combiCourante.grille.combiGagnante()==false && essai<12){
+        while(combiCourante.combiGagnante(combiCourante,combinaison)==false && essai<12){
             grille.affichageJeu();
             //choisir combi
             System.out.println("Choisissez votre combinaison de couleurs !");
@@ -47,11 +49,11 @@ public class Partie {
                 sc.reset();
                 sc=new Scanner(System.in);
                 couleur[i]=sc.nextLine();
+                }
             }
-                combiCourante.couleur[i]=couleur;
-            }
-            int posi =combiCourante.SimilitudePosi();
-            int coul=combiCourante.SimilitudeCoul();
+            combiCourante =new Combinaisons(couleur);
+            int posi =combiCourante.SimilitudePosi(combiCourante,combinaison);
+            int coul=combiCourante.SimilitudeCoul(combiCourante,combinaison);
             grille.tableaux(essai, posi, coul, combiCourante);
             essai++;
         }
