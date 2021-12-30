@@ -14,51 +14,13 @@ import java.util.Random;
 public class Combinaisons {
     
     String [] couleur;
-    Combinaisons combinaison;
-    Combinaisons combiCourante;
-    String[] Choix ={"ro","bl","ja","ve","vi","wh"};
-    int posi;
-    int coul;
     
-    public void initialiserCombi(){ 
-        Random rand= new Random();
-        couleur = new String[4];
-        int numco;
-        for (int i=0;i<4;i++){
-            numco=rand.nextInt(6);
-            couleur[i]=Choix[numco];
+    
+    public Combinaisons (String [] couleurs){
+        for (int i=0; i<couleurs.length;i++){
+            couleur[i]=couleurs[i];
         }
     }
     
-    public int SimilitudePosi(){
-        combiCourante=new Combinaisons();
-        combinaison=new Combinaisons();
-        posi=0;
-        for (int i=0;i<4;i++){
-            if (combiCourante.couleur[i]==combinaison.couleur[i]){
-                posi++;
-            }
-        }
-        return posi;
-    }
-    
-    public int SimilitudeCoul(){
-        coul=0;
-        for (int i=0;i<4;i++){
-            for (int j=0;j<4;j++){
-                if (combiCourante.couleur[i]==combinaison.couleur[j]){
-                    coul++;
-                }
-            }
-        }
-        return coul;
-    }
-    
-    public boolean combiGagnante(){
-        if (SimilitudePosi()==4 && SimilitudeCoul()==4){
-            return true;
-        }
-        return false;
-    }
 }
 
