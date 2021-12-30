@@ -13,11 +13,12 @@ import java.util.Random;
  */
 public class Combinaisons {
     
-    String [] couleur;
+    String [] couleur ;
     int posi;
     int coul;
     
     public Combinaisons (String [] couleurs){
+        couleur = new String [couleurs.length];
         for (int i=0; i<couleurs.length;i++){
             couleur[i]=couleurs[i];
         }
