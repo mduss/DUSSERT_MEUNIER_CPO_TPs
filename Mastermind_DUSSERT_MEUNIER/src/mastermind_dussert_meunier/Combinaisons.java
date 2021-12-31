@@ -24,33 +24,6 @@ public class Combinaisons {
         }
     }
     
-    public int SimilitudePosi(Combinaisons cc,Combinaisons c){
-        posi=0;
-        for (int i=0;i<4;i++){
-            if (cc.couleur[i]==c.couleur[i]){
-                posi++;
-            }
-        }
-        return posi;
-    }
     
-    public int SimilitudeCoul(Combinaisons cc,Combinaisons c){
-        coul=0;
-        for (int i=0;i<4;i++){
-            for (int j=0;j<4;j++){
-                if (cc.couleur[i]==c.couleur[j]){
-                    coul++;
-                }
-            }
-        }
-        return coul;
-    }
-    
-    public boolean combiGagnante(Combinaisons cc,Combinaisons c){
-        if (SimilitudePosi(cc,c)==4 && SimilitudeCoul(cc,c)==4){
-            return true;
-        }
-        return false;
-    }
 }
 
