@@ -22,7 +22,6 @@ public class Combinaisons {
         for (int i=0; i<couleurs.length;i++){
             couleur[i]=couleurs[i];
         }
-    }
-    
+    }  
 }
 
