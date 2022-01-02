@@ -13,11 +13,9 @@ import java.util.Random;
  */
 public class Combinaisons {
     
-    String [] couleur ;
-    int posi;
-    int coul;
+    String [] couleur ; //couleurs composants la combinaision
     
-    public Combinaisons (String [] couleurs){
+    public Combinaisons (String [] couleurs){ //en entréé un tableau de couleurs qui représentera les couleurs de la combinaison
         couleur = new String [couleurs.length];
         for (int i=0; i<couleurs.length;i++){
             couleur[i]=couleurs[i];
