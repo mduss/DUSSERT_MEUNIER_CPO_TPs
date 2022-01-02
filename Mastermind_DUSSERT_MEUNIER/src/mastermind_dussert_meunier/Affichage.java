@@ -22,7 +22,7 @@ public class Affichage {
     int posi;
     int coul;
     
-    public void tableaux(int tent, int posi, int coul,Combinaisons1 combiCourante){
+    public void tableaux(int tent, int posi, int coul,Combinaisons combiCourante){
         for (int i=0; i<4;i++){
             Combinaison[tent][i]=combiCourante.couleur[i];
         }
