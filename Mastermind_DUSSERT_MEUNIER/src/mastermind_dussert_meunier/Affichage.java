@@ -37,7 +37,7 @@ public class Affichage {
     }
     
     
-    public void affichageJeu(){// affichege de 
+    public void affichageJeu(){// affichege de la grill de jeu
         System.out.println("  Position   | Combinaison  |   Couleur   ");
         for (int i=0; i<12;i++){
             for (int j=0;j<4;j++){
