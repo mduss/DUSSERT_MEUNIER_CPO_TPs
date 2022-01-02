@@ -11,4 +11,5 @@ package mastermind_dussert_meunier;
  */
 public class Joueur {
     String Nom;
+    int essai;
 }
