@@ -12,5 +12,4 @@ package mastermind_dussert_meunier;
 public class Joueur {
     String Nom; 
     int essai;//nombre de tentatives du joueur
-    
 }
