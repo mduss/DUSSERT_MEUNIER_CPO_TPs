@@ -10,6 +10,6 @@ package mastermind_dussert_meunier;
  * @author dusse
  */
 public class Joueur {
-    String Nom;
-    int essai;
+    String Nom; 
+    int essai;//nombre de tentatives du joueur
 }
