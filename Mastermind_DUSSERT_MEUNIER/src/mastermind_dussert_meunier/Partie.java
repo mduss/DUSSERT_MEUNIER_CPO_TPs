@@ -35,6 +35,7 @@ public class Partie {
         grille.tableaux(essai, posi, coul, combiCourante);//les tableaux qui permettent de créer la grille sont mis à jour avec la nouvelle combinaison saisi et les similitudes
         essai++;// on passe à l'essai suivant
         
+        
         while(grille.combiGagnante(combiCourante,combinaison)==false && essai<12){ // création d'une boucle qui s'exécute tant que la combinaison courante n'est pas gagnante ou que le nombre d'essai est inférieur à 12
             //cette boucle utilise le même principe que pour la 1e combinaison Courante
             grille.affichageJeu(); 
