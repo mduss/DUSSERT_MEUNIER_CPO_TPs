@@ -12,6 +12,7 @@ import java.util.Scanner;
  * @author dusse
  */
 public class Partie {
+    
     int essai;
     Affichage grille;
     Combinaisons combiCourante;
